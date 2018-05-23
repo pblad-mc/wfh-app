@@ -1,0 +1,29 @@
+.login {
+    background-color: lightgoldenrodyellow;
+    width: 50%;
+    margin: auto;
+    height: 300px;
+}
+
+.inputTextWrapper {
+    padding: 10px;
+}
+
+.inputTextWrapper h3 {
+    text-align: left;
+}
+.inputText {
+    width: 50%;   
+}
+
+.loginButton {
+    width: 40%;
+    margin: 0 auto;
+    background-color: aqua;
+    height: 50px;
+    padding: 15px;
+}
+
+body {
+    font-family: 'Arial';
+}
