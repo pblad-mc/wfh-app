@@ -5,9 +5,11 @@
     
         <h1>
             Work From Home Tracker
-            <br>
-            <h4> login </h4>
+            <hr>
         </h1>
+        <h3>
+            Login
+        </h3>
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
     
@@ -26,15 +28,20 @@
     
         <div style="padding-top: 20px;">
     
+            
             <a [routerLink]="['/toNonAdmin']">
-                <button class="loginButton"> Employee </button>
+                <button class="loginButton" style="background-color:#5e6596"> Employee </button>
             </a>
-    
-            <a [routerLink]="['/toAdmin']">
+            
+            <div class="divider"></div>
+
+            <a [routerLink]="['/toAdmin']" (click)="onAdminClick()">
                 <button class="loginButton"> Admin </button>
             </a>
         </div>
     
     
     </div>
+
+    <img src="../mastercontrol.jpg"/>
 </body>
