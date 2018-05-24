@@ -1,8 +1,8 @@
 .login {
     background-color: #f7f7f7;
-    width: 50%;
+    width: 500px;
     margin: auto;
-    height: 300px;
+    height: 350px;
     border: 0.5px black solid;
     box-shadow: 0 8px 6px -6px #565656;
     border-radius: 2px;
@@ -20,10 +20,14 @@
 }
 
 .inputTextWrapper h3 {
-    text-align: left;
+    text-align: center;
 }
+
 .inputText {
-    width: 50%;   
+    width: 70%;   
+    border: 0px solid #000000;
+    border-bottom-width: 1px;
+    background-color: transparent;
 }
 
 .loginButton {
@@ -49,11 +53,16 @@
 
 
 body {
-    font-family: 'Arial';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .divider{
     width:5px;
     height:auto;
     display:inline-block;
+}
+
+.MCImage {
+    padding-top: 50px;
+    width: 20%;
 }

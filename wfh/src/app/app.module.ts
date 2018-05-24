@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NonAdminComponent } from './non-admin/non-admin.component';
 import { AdminComponent } from './admin/admin.component';
+import {FooterComponent } from './footer-component/footer-compoent';
 
 import { RouterModule, Router } from '@angular/router';
 
@@ -14,7 +15,8 @@ import { RouterModule, Router } from '@angular/router';
     AppComponent,
     LoginComponent,
     NonAdminComponent,
-    AdminComponent
+    AdminComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

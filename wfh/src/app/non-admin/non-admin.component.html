@@ -1,39 +1,51 @@
-<div style="text-align:center">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+
+
+<body>
+
+    <div style="text-align:center">
+        
+        <h1>
+            Workers Log
+        </h1>
+        <!--<img width="300" alt="image" src="../photos/m.jpg">-->
+    </div>
     
-    <h1>
-        Workers Log
-    </h1>
-    <!--<img width="300" alt="image" src="../photos/m.jpg">-->
-</div>
-
-
-<div class="login">
-
-    <div class="inputTextWrapper">
-        <h3>Did Yesterday</h3>
-        <textarea 
-        name="didYesterday"
-        rows="4" 
-        cols="50"></textarea>
+    
+    <div class="outerWrapper">
+    
+        <div class="inputTextWrapper">
+            <h3>Did Yesterday</h3>
+            <textarea 
+            name="didYesterday"
+            rows="4" 
+            cols="50"
+            required></textarea>
+        </div>
+    
+        <div class="inputTextWrapper">
+            <h3>Doing Today</h3>
+            <textarea 
+            name="doToday"
+            rows="4" 
+            cols="50"
+            required></textarea>
+        </div>
+    
+        <div class="inputTextWrapper">
+            <h3>Notes</h3>
+            <textarea 
+            name="notes"
+            rows="4" 
+            cols="50"></textarea>
+        </div>
+    
+        <div style="padding-top: 20px;">
+            <button class="submitButton"> Submit </button>
+        </div>
     </div>
+    
+    <footer-component></footer-component>
 
-    <div class="inputTextWrapper">
-        <h3>Doing Today</h3>
-        <textarea 
-        name="doToday"
-        rows="4" 
-        cols="50"></textarea>
-    </div>
+</body>    
 
-    <div class="inputTextWrapper">
-        <h3>Notes</h3>
-        <textarea 
-        name="notes"
-        rows="4" 
-        cols="50"></textarea>
-    </div>
-
-    <div style="padding-top: 20px;">
-        <button class="loginButton"> Submit </button>
-    </div>
-</div>
