@@ -18,6 +18,7 @@ export class LoginComponent {
 
     onAdminClick()
     {
+        console.log("alsfjlkasfdlkasfldksadlkjlkasfdlj")
         debugger;
     }
 }
