@@ -7,7 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { NonAdminComponent } from './non-admin/non-admin.component';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer-component/footer-compoent';
-import { AutocompleteFilterExample } from './auto-complete/autocomplete.component';
+import { AutocompleteFilterEmployees } from './auto-complete/autocomplete.component';
+import { AutocompleteFilterDates } from './autocomplete-dates/autocomplete-dates.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
@@ -63,7 +64,8 @@ import { RouterModule, Router } from '@angular/router';
     NonAdminComponent,
     AdminComponent,
     FooterComponent,
-    AutocompleteFilterExample
+    AutocompleteFilterEmployees,
+    AutocompleteFilterDates,
   ],
   imports: [
     BrowserModule,

@@ -12,29 +12,35 @@
     </div>
 
 
-    <div class="outerWrapper">
+    <div class="outerWrapper" style="height: 300px;">
 
         <div class="inputTextWrapper">
-            <h3>Search Employee</h3>
 
             <autocomplete-filter></autocomplete-filter>
 
         </div>
 
         <div class="inputTextWrapper">
-            <h3>Doing Today</h3>
-            <textarea name="doToday" rows="4" cols="50" required></textarea>
+
+            <autocomplete-dates-filter></autocomplete-dates-filter>
+
         </div>
 
-        <div class="inputTextWrapper">
-            <h3>Notes</h3>
-            <textarea name="notes" rows="4" cols="50"></textarea>
-        </div>
 
         <div style="padding-top: 20px;">
-            <button class="submitButton"> Submit </button>
+            <button class="submitButton"> Search </button>
         </div>
     </div>
+
+    <div style="height: 100px;"></div>
+
+    <div class="outerWrapper" style="height: 150px;">
+
+        <div style="padding-top: 30px;">
+            <button class="submitButton"> Export All to Excel </button>
+        </div>
+    </div>
+
 
     <footer-component></footer-component>
 
