@@ -20,6 +20,7 @@
             name="didYesterday"
             rows="4" 
             cols="50"
+            [(ngModel)]='didYesterday'
             required></textarea>
         </div>
     
@@ -29,6 +30,7 @@
             name="doToday"
             rows="4" 
             cols="50"
+            [(ngModel)]='doingToday'
             required></textarea>
         </div>
     
@@ -37,11 +39,12 @@
             <textarea 
             name="notes"
             rows="4" 
+            [(ngModel)]='notes'
             cols="50"></textarea>
         </div>
     
         <div style="padding-top: 20px;">
-            <button class="submitButton"> Submit </button>
+            <button class="submitButton" (click)="submit()"> Submit </button>
         </div>
     </div>
     
