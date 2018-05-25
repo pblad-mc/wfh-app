@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+import { HttpModule} from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { NonAdminComponent } from './non-admin/non-admin.component';
 import { AdminComponent } from './admin/admin.component';
@@ -14,6 +14,10 @@ import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InMemoryEntryService } from './backend';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { UserService } from './shared/user.service';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -70,11 +74,14 @@ import { RouterModule, Router } from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
+    InMemoryWebApiModule.forRoot(InMemoryEntryService),
+
     RouterModule.forRoot ([
       { path: 'toNonAdmin', component: NonAdminComponent },
       { path: 'toAdmin', component: AdminComponent },
@@ -83,7 +90,7 @@ import { RouterModule, Router } from '@angular/router';
       { path: '**', redirectTo: 'toLogin', pathMatch: 'full'}
     ])
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 
