@@ -8,6 +8,7 @@
     border-radius: 2px;
     -webkit-transition-duration: 0.7s; /* Safari */
     transition-duration: 0.7s;
+    float: left;
 }
 
 
@@ -46,4 +47,8 @@ textarea{
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.overallWrapper {
+    display: inline;
 }

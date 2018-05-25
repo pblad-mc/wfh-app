@@ -10,11 +10,12 @@ import { Entry } from '../shared/entry.model';
     styleUrls: ['login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     _username: string;
     _password: string;
+    access: boolean = false;
 
-    userFound: User
+    userFound: User;
 
     users: User[];
 
@@ -25,7 +26,6 @@ export class LoginComponent {
     ngOnInit() 
     {
         console.log(this.userService.getUsers().then(users => this.users = users));
-        
     }
 
     get username(): string {
@@ -48,11 +48,13 @@ export class LoginComponent {
 
         this.userFound = this.users.find(u => u.username == this.username)
         
-        if (this.userFound){
-            console.log(this.userFound)
+        if (this.userFound && this.userFound.password == this.password){
+            console.log(this.userFound);
+            this.access = true;
         }
         else {
             console.log('you have a bad username');
+            this.access = false;
         }
 
         

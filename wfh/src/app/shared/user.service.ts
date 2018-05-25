@@ -11,7 +11,9 @@ export class UserService //The actions of the Entry
     getUsers(): Promise<User[]>
     {
         //Converts the json file into an Entry then places them into a list
-        return this.http.get('/app/users').toPromise().then(response => response.json().data as User[]);
+        return this.http.get('/app/users')
+        .toPromise()
+        .then((response) => response.json() as User[]);
     }
 
 
