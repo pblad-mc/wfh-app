@@ -11,29 +11,31 @@ import {map, startWith} from 'rxjs/operators';
   templateUrl: 'autocomplete.component.html',
   styleUrls: ['autocomplete.component.css']
 })
-export class AutocompleteFilterExample implements OnInit {
+export class AutocompleteFilterEmployees implements OnInit {
 
   myControl: FormControl = new FormControl();
+  filteredEmployees: Observable<string[]>;
 
-  options = [
-    'One',
-    'Two',
-    'Three'
+  employees = [
+    'Alex Stevens',
+    'Hunter Jenkins',
+    'LeBron James',
+    'Barack Obama',
+    'Jason Hansen',
+    'Kobe Bryant',
+    'Donovan Mitchell',
+    'Russell Westbrook',
+    'Kevin Love'
   ];
 
-  filteredOptions: Observable<string[]>;
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(val => this.filter(val))
-      );
+    this.filteredEmployees = this.myControl.valueChanges
+      .pipe(startWith(''),map(val => this.filter(val)) );
   }
 
   filter(val: string): string[] {
-    return this.options.filter(option =>
-      option.toLowerCase().includes(val.toLowerCase()));
+    return this.employees.filter(employee => employee.toLowerCase().includes(val.toLowerCase()));
   }
 
 }

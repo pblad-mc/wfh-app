@@ -58,3 +58,10 @@ body {
 .search-control {
     padding: 5px 10px;
 }
+
+
+.inputTextWrapper {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
