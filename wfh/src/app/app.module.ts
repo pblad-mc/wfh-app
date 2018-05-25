@@ -12,8 +12,8 @@ import { AutocompleteFilterDates } from './autocomplete-dates/autocomplete-dates
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
@@ -91,7 +91,7 @@ import { RouterModule, Router } from '@angular/router';
     ])
   ],
   providers: [ UserService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }
