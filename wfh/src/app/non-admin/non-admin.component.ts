@@ -10,7 +10,7 @@ export class NonAdminComponent {
     _doingToday: string;
     _notes: string;
 
-    constructor (private username: string) { }
+    //constructor (private username: string) { }
     
     get didYesterday(): string {
         return this._didYesterday;
