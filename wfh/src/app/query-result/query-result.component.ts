@@ -10,6 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 
 export class QueryResultComponent {
-
+    name:string = ""
+    date:string = ""
+    
     
 }

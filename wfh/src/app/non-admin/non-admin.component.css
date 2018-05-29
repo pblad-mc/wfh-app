@@ -55,3 +55,10 @@ body {
     justify-content: space-between;
     margin: 0 auto;
 }
+
+
+.HomeButton {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
