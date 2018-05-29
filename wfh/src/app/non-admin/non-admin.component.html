@@ -12,63 +12,52 @@
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
 
-<div class="overallWrapper">
+    <div class="overallWrapper">
 
-    <h4>Morning Log</h4>
-    <div class="outerWrapper">
+        <div>
+            <h4>Morning Log</h4>
+            <div class="outerWrapper">
+                <div class="inputTextWrapper">
+                    <h3>Did Yesterday</h3>
+                    <textarea name="didYesterday" rows="4" cols="50" [(ngModel)]='didYesterday' required></textarea>
+                </div>
 
-        <div class="inputTextWrapper">
-            <h3>Did Yesterday</h3>
-            <textarea 
-            name="didYesterday"
-            rows="4" 
-            cols="50"
-            [(ngModel)]='didYesterday'
-            required></textarea>
+                <div class="inputTextWrapper">
+                    <h3>Doing Today</h3>
+                    <textarea name="doToday" rows="4" cols="50" [(ngModel)]='doingToday' required></textarea>
+                </div>
+
+                <div class="inputTextWrapper">
+                    <h3>Notes</h3>
+                    <textarea name="notes" rows="4" [(ngModel)]='notes' cols="50"></textarea>
+                </div>
+
+                <div style="padding-top: 20px;">
+                    <button class="submitButton" (click)="submit()"> Submit </button>
+                </div>
+            </div>
         </div>
 
-        <div class="inputTextWrapper">
-            <h3>Doing Today</h3>
-            <textarea 
-            name="doToday"
-            rows="4" 
-            cols="50"
-            [(ngModel)]='doingToday'
-            required></textarea>
-        </div>
+        <div>
+            <h4>Evening Log</h4>
+            <div class="outerWrapper" style="height: 380px;">
 
-        <div class="inputTextWrapper">
-            <h3>Notes</h3>
-            <textarea 
-            name="notes"
-            rows="4" 
-            [(ngModel)]='notes'
-            cols="50"></textarea>
-        </div>
+                <div class="inputTextWrapper">
+                    <h3>Did Today</h3>
+                    <textarea name="didYesterday" rows="4" cols="50" required></textarea>
+                </div>
 
-        <div style="padding-top: 20px;">
-            <button class="submitButton" (click)="submit()"> Submit </button>
-        </div>
-    </div>
+                <div class="inputTextWrapper">
+                    <h3>Notes</h3>
+                    <textarea name="notes" rows="4" cols="50"></textarea>
+                </div>
 
-    <h4>Evening Log</h4>
-    <div class="outerWrapper" style="height: 380px;">
-
-        <div class="inputTextWrapper">
-            <h3>Did Today</h3>
-            <textarea name="didYesterday" rows="4" cols="50" required></textarea>
-        </div>
-
-        <div class="inputTextWrapper">
-            <h3>Notes</h3>
-            <textarea name="notes" rows="4" cols="50"></textarea>
-        </div>
-
-        <div style="padding-top: 20px;">
-            <button class="submitButton"> Submit </button>
+                <div style="padding-top: 20px;">
+                    <button class="submitButton"> Submit </button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
     <footer-component></footer-component>
 

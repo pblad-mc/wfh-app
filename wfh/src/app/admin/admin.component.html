@@ -12,36 +12,43 @@
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
 
-    <h4>Indivual Query</h4>
-    <div class="outerWrapper" style="height: 300px;">
-
-        <div class="inputTextWrapper">
-
-            <autocomplete-filter (click)="autoCompleteClic()"></autocomplete-filter>
-
+    <div class="overallWrapper">
+        <div>
+            <h4>Indivual Query</h4>
+            <div class="outerWrapper" style="height: 300px;">
+    
+                <div class="inputTextWrapper">
+    
+                    <autocomplete-filter></autocomplete-filter>
+    
+                </div>
+    
+                <div class="inputTextWrapper">
+    
+                    <autocomplete-dates-filter></autocomplete-dates-filter>
+    
+                </div>
+    
+    
+                <div style="padding-top: 20px;">
+                    <button class="submitButton"> Search </button>
+                </div>
+            </div>
         </div>
 
-        <div class="inputTextWrapper">
+        <div style="height: 100px;"></div>
 
-            <autocomplete-dates-filter></autocomplete-dates-filter>
-
-        </div>
-
-
-        <div style="padding-top: 20px;">
-            <button class="submitButton"> Search </button>
+        <div>
+            <h4>Overall Query</h4>
+            <div class="outerWrapper" style="height: 150px;">
+    
+                <div style="padding-top: 30px;">
+                    <button class="submitButton"> Export All to Excel </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div style="height: 100px;"></div>
-
-    <h4>Overall Query</h4>
-    <div class="outerWrapper" style="height: 150px;">
-
-        <div style="padding-top: 30px;">
-            <button class="submitButton"> Export All to Excel </button>
-        </div>
-    </div>
 
 
     <footer-component></footer-component>
