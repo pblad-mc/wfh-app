@@ -1,17 +1,27 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom right, #3d3d3d, #262626);
+    margin:0;
+    padding: 0;
+    color: white;
+
+}
+
 .login {
-    background-color: #f7f7f7;
+    background-color: #1c1c1c; /*f7f7f7*/
     width: 500px;
     margin: auto;
     height: 350px;
-    border: 0.5px black solid;
-    box-shadow: 0 8px 6px -6px #565656;
+    color: white;
+    border: 0.5px #494949 solid;
+    box-shadow: 0 8px 6px -6px black; /*565656*/
     border-radius: 2px;
     -webkit-transition-duration: 0.7s; /* Safari */
     transition-duration: 0.7s;
 }
 
 .login:hover {
-    box-shadow: 0 18px 16px -6px #565656;
+    box-shadow: 0 18px 16px -6px black; /*565656*/
 
 }
 
@@ -25,18 +35,19 @@
 
 .inputText {
     width: 70%;   
-    border: 0px solid #000000;
+    border: 0px solid white;
+    color: white;
     border-bottom-width: 1px;
     background-color: transparent;
 }
 
 .loginButton {
     position: relative;
-    background-color: #4CAF50;
+    background-color: #ea3c3c; /*4CAF50*/
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
-    padding: 20px;
+    padding: 15px;
     width: 200px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -44,17 +55,16 @@
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 7px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 .loginButton:hover {
-    box-shadow: 5px 10px 18px #888888;
+    /*box-shadow: 5px 10px 18px black;*/ /*#888888*/
+    border: 0.5px solid white;
 }
 
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
+
 
 .divider{
     width:5px;
@@ -63,10 +73,21 @@ body {
 }
 
 .MCImage {
-    padding-top: 50px;
+    padding-top: 10px;
     width: 20%;
 }
 
 .failedMessage {
     color: red
+}
+
+
+.specialHr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #ea3c3c;
+    margin: 1em 0;
+    padding: 0; 
+    clear:both;
 }

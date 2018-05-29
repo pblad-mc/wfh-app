@@ -31,7 +31,8 @@
 
                 <div class="inputTextWrapper">
 
-                    <autocomplete-filter></autocomplete-filter>
+                    <autocomplete-filter (selected)="receiveEmployee($event)">
+                    </autocomplete-filter>
 
                 </div>
 
@@ -43,7 +44,7 @@
 
 
                 <div style="padding-top: 20px;">
-                    <button class="submitButton" (click)="showQueryResults = !showQueryResults"> Search </button>
+                    <button class="submitButton" (click)="showQueryResults = true"> Search </button>
                 </div>
             </div>
         </div>
@@ -64,8 +65,9 @@
     <div style="height: 50px;"></div>
 
     <div class="queryResults" *ngIf="showQueryResults">
-        <query-result
-            name="Alex"></query-result>
+        <query-result 
+            [user]="selectedUser"
+            [date]="date"></query-result>
     </div>
 
 
