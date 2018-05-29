@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from '../shared/user.service';
+import { User } from '../shared/user.model';
 
 
 @Component({
@@ -7,6 +9,28 @@ import { Component } from '@angular/core';
 })
 
 export class AdminComponent  {
+    users: User[]
+    usersNames: string[] 
 
+    constructor(private userService: UserService){   
+    }
 
+    ngOnInit() 
+    {
+        console.log(this.userService.getUsers().then(users => {this.users = users}));
+        
+        
+        // for (let user of this.users){
+        //     this.usersNames.push(user.name)
+        // }
+        // console.log(this.usersNames);
+        
+    }
+
+    autoCompleteClic(){
+
+        
+
+        
+    }
 }
