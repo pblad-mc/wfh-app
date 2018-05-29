@@ -1,0 +1,27 @@
+.submitButton {
+    position: relative;
+    background-color: lightgray;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+
+.specialHr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #db7a7a;
+    margin: 1em 0;
+    padding: 0; 
+    clear:both;
+}
