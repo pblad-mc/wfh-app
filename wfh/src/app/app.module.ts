@@ -17,7 +17,8 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
-
+import { QueryResultComponent } from './query-result/query-result.component';
+ 
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -70,6 +71,7 @@ import { RouterModule, Router } from '@angular/router';
     FooterComponent,
     AutocompleteFilterEmployees,
     AutocompleteFilterDates,
+    QueryResultComponent
   ],
   imports: [
     BrowserModule,
