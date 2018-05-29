@@ -38,22 +38,18 @@
         <div style="padding-top: 50px;">
     
             
-            <a [routerLink]="['/toNonAdmin']">
-                <button 
-                class="loginButton" 
-                style="background-color:#5e6596" 
-                (click)="employeeLogin()"> New Entry </button>
-            </a>
+            <button 
+            class="loginButton" 
+            style="background-color:#5e6596" 
+            (click)="employeeLogin()"> New Entry </button>
             
             <div class="divider"></div>
 
-            <a [routerLink]="['/toAdmin']">
-                <button (click)="adminLogin()" class="loginButton"> Lookup </button>
-            </a>
+            <button (click)="adminLogin()" class="loginButton"> Lookup </button>
         </div>
     
     
     </div>
 
     <footer-component></footer-component>
-</body>
+</body> 

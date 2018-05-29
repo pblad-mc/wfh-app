@@ -28,9 +28,13 @@ export class InMemoryEntryService implements InMemoryDbService {
                         evening_notes:"im good "
                     }
                 ], 
-                
-                
-            
+            },
+            {
+                id: 2,
+                name: "Alex Stevens",
+                username: "alex",
+                password: "alex",
+                entries: []
             }
         ];
         return { users };
