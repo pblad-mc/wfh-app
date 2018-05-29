@@ -3,16 +3,22 @@
 
 <body>
 
-    <div class="HomeButton">
-        <a [routerLink]="['/toAdmin']">
-            <button>Home</button>
+    <div class="lookupButtonWrapper">
+        <a [routerLink]="['/toAdmin']" class="lookupButton">
+           Lookup
+        </a>
+    </div>
+
+    <div class="logoutButtonWrapper">
+        <a [routerLink]="['/toLogin']" class="logoutButton">
+            Logout
         </a>
     </div>
 
     <div style="text-align:center">
 
         <h1>
-            Workers Log
+            New Entry
         </h1>
         <hr>
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
