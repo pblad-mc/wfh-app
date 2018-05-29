@@ -66,3 +66,7 @@ body {
     padding-top: 50px;
     width: 20%;
 }
+
+.failedMessage {
+    color: red
+}

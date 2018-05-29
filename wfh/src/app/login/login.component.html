@@ -10,11 +10,10 @@
         <h3>
             Login
         </h3>
+        <h4 class="failedMessage" *ngIf="loginFailed">Login Failed: Username or Password is incorrect.</h4>
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
-    
-    <h1  *ngFor="let user of users"></h1> 
-    
+     
     <div class="login">
     
         <div class="inputTextWrapper">

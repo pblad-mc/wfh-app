@@ -11,6 +11,7 @@ import { User } from '../shared/user.model';
 export class AdminComponent  {
     users: User[]
     usersNames: string[] 
+    selectedUser: User
 
     constructor(private userService: UserService){   
     }

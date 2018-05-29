@@ -14,9 +14,9 @@ import { Entry } from '../shared/entry.model';
 export class LoginComponent implements OnInit {
     _username: string;
     _password: string;
-    access: boolean = false;
     currentUser: User;
     routingUrl: string;
+    loginFailed: boolean = false;
 
     userFound: User;
 
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() 
     {
-        console.log(this.userService.getUsers().then(users => this.users = users));
+        this.userService.getUsers().then(users => this.users = users);
     }
 
     get username(): string {
@@ -56,14 +56,12 @@ export class LoginComponent implements OnInit {
         this.userFound = this.users.find(u => u.username == this.username)
         
         if (this.userFound && this.userFound.password == this.password){
-            console.log(this.userFound);
-            this.access = true;
+            this.loginFailed = false
             localStorage.setItem('currentUser', JSON.stringify(this.userFound));
             this.router.navigate([this.routingUrl]);
         }
         else {
-            console.log('you have a bad username');
-            this.access = false;
+            this.loginFailed = true
         }
     }
 
@@ -84,8 +82,5 @@ export class LoginComponent implements OnInit {
     adminLogin(){
         this.routingUrl = '/toAdmin'
         this.login()
-        console.log('you are logging in as a administrator');
-        console.log("username: ", this.username)
-        console.log("password: ", this.password)
     }
 }
