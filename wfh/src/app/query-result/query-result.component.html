@@ -1,15 +1,55 @@
 <form (submit)="onSubmit()" #commentForm="ngForm">
+    <h2>Report</h2>
     <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" [(ngModel)]="name" required />
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Name</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">Context</h1>
+        <hr style="clear:both;" />
     </div>
 
     <div>
-        <label for="comment">Comment</label>
-        <textarea name="comment" [(ngModel)]="comment" required> </textarea>
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Date</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">--/--/----</h1>
+        <hr style="clear:both;" />
     </div>
 
     <div>
-        <button>Submit</button>
+        <h2>Morning</h2>
     </div>
+
+    <div>
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Did Yesterday</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">[Filler Text]</h1>
+        <hr class="specialHr" />
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Doing Today</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">[Filler Text]</h1>
+        <hr class="specialHr" />
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Notes</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">[Filler Text]</h1>
+        <hr class="specialHr" />
+        <hr style="clear:both;" />
+    </div>
+
+    <div>
+        <h2>Evening</h2>
+    </div>
+
+    <div>
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Did Today</h2>
+        <div style="width: 60%;text-align:left;float:right; padding-right: 30px;">
+            <h3 style="display: block;">
+                • Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque <br/> • laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis;
+            </h3>
+        </div>
+        <hr class="specialHr" />
+
+        <h2 style="text-align:left;float:left; padding-left: 50px;">Notes</h2>
+        <h1 style="text-align:right;float:right; padding-right: 50px;">[Filler Text]</h1>
+        <hr class="specialHr" />
+        <hr style="clear:both;" />
+    </div>
+
+    <div>
+        <button class="submitButton">Close</button>
+    </div>
+
 </form>

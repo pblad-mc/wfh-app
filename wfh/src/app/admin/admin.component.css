@@ -73,3 +73,14 @@ body {
     justify-content: space-between;
     margin: 0 auto;
 }
+
+.queryResults{
+    padding-bottom: 50px;
+    padding-top: 10px;
+    background-color: #db7a7a;
+    width: 700px;
+    display: block;
+    margin: 0 auto;
+    border: 0.25px #545454 solid;
+
+}

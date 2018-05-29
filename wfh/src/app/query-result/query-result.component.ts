@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 @Component({
     selector: 'query-result',
     templateUrl: 'query-result.component.html',
-    styleUrls: ['query-result.component.cs']
+    styleUrls: ['query-result.component.css']
 
 
 })
