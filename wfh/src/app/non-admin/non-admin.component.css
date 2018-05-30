@@ -1,5 +1,5 @@
 .outerWrapper {
-    background-color: #1c1c1c; 
+    background-color: #f7f7f7; 
     width: 500px;
     margin: auto;
     height: 500px;
@@ -9,6 +9,7 @@
     -webkit-transition-duration: 0.7s; /* Safari */
     transition-duration: 0.7s;
     float: left;
+    color: black;
 }
 
 
@@ -21,9 +22,11 @@
 
 textarea{
     resize: none;
-    background-color: #282828;
-    color: white;
+    background-color: #efefef;
+    color: black;
+    box-shadow: 5px 10px 18px #e2e2e2;
     border: none;
+
 }
 
 
@@ -87,7 +90,7 @@ body {
 }
 
 .lookupButton:hover {
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px black;
 }
 
 
@@ -107,11 +110,21 @@ body {
 }
 
 .logoutButton:hover {
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px black;
 }
 
 .logoutButtonWrapper {
     position: absolute;
     top: 30px;
     left: 40px;
+}
+
+.specialHr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #ea3c3c;
+    margin: 1em 0;
+    padding: 0; 
+    clear:both;
 }

@@ -15,7 +15,8 @@ export class AdminComponent  {
     usersNames: string[] 
     selectedUser: User
     selectedUserName: string
-    date:string = "May 22, 2018"
+    date:Date;
+    dateString: string
     entry: Entry
 
     constructor(private userService: UserService){   }
@@ -33,15 +34,28 @@ export class AdminComponent  {
     }
 
     submit(){
-        console.log("Hunter is good at ping pong")
+        //console.log("Hunter is good at ping pong")
     }
 
     receiveEmployee($event){
         this.selectedUserName = $event
-        console.log("this is what we got ", this.selectedUserName);
+        //console.log("this is what we got ", this.selectedUserName);
         if (this.users){
             this.selectedUser = this.users.find(u => u.name == this.selectedUserName)
-            this.entry = this.selectedUser.entries.find(entry => entry.date == this.date)
+        }
+        this.getEntry()
+    }
+
+    receiveDate($event)
+    {
+        this.date = $event;
+        console.log("Admin just received the date:" , this.date.toString);
+        this.getEntry()
+    }
+
+    getEntry(){
+        if(this.selectedUser && this.date){
+            this.entry = this.selectedUser.entries.find(entry => entry.date == this.date.toDateString())
         }
     }
 }

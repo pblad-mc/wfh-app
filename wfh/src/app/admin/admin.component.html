@@ -20,7 +20,8 @@
         <h1>
             Lookup
         </h1>
-        <hr>
+        <hr class="specialHr">
+
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
 
@@ -37,7 +38,7 @@
                 </div>
 
                 <div class="inputTextWrapper">
-                    <datepicker style="float: left;"></datepicker>
+                    <datepicker (dateSelected)="receiveDate($event)" style="float: left;"></datepicker>
                 </div>
 
                 <div style="height: 60px;"></div>
@@ -67,7 +68,7 @@
     <div class="queryResults" *ngIf="showQueryResults">
         <query-result 
             [user]="selectedUser"
-            [date]="date"
+            [date]="date.toDateString()"
             [entry]="entry"></query-result>
     </div>
 

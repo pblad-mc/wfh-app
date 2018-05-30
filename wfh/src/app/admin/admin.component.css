@@ -3,7 +3,7 @@
     margin: auto;
     height: 500px;
     border: 0.5px black solid;
-    box-shadow: 0 8px 6px -6px #565656;
+    box-shadow: 0 10px 8px -8px black; /*#565656*/
     border-radius: 2px;
     -webkit-transition-duration: 0.7s; /* Safari */
     transition-duration: 0.7s;
@@ -13,7 +13,7 @@
 
 
 .outerWrapper:hover {
-    box-shadow: 0 18px 16px -6px #565656;
+    box-shadow: 0 18px 16px -6px black;
 
 }
 
@@ -83,6 +83,7 @@ body {
     display: block;
     margin: 0 auto;
     border: 0.25px #545454 solid;
+    color: black;
 
 }
 
@@ -138,4 +139,14 @@ body {
     position: absolute;
     top: 30px;
     left: 40px;
+}
+
+.specialHr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #ea3c3c;
+    margin: 1em 0;
+    padding: 0; 
+    clear:both;
 }

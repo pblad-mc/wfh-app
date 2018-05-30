@@ -12,7 +12,7 @@ export class InMemoryEntryService implements InMemoryDbService {
                 entries:
                 [
                     {
-                        date:"May 22, 2018",
+                        date:"Tue May 22 2018",
                         morning_didYesterday: "Fixed Bug",
                         morning_doingToday:"Build feature",
                         morning_notes:"How do I build feature?",
@@ -20,7 +20,7 @@ export class InMemoryEntryService implements InMemoryDbService {
                         evening_notes:"nothing"
                     },
                     {
-                        date:"May 23, 2018",
+                        date:"Wed May 23 2018",
                         morning_didYesterday: "worked",
                         morning_doingToday:"doing work",
                         morning_notes:"na",
@@ -36,7 +36,7 @@ export class InMemoryEntryService implements InMemoryDbService {
                 password: "alex",
                 entries: [
                     {
-                        date:"May 22, 2018",
+                        date:"Tue May 22 2018",
                         morning_didYesterday: "planning, coding, reading",
                         morning_doingToday:"taking nap, eating burito",
                         morning_notes:"How do I build feature?"

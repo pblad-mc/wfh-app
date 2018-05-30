@@ -42,7 +42,7 @@ export class AutocompleteFilterEmployees implements OnInit {
   filter(val: string): string[] {
     let filteredString =  this.employees.filter(employee => employee.toLowerCase().includes(val.toLowerCase()));
     this.value = filteredString[0];
-    console.log (this.value);
+    //console.log (this.value);
     this.sendValue()
     return filteredString
   }

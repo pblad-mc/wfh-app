@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 
@@ -10,10 +10,19 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 })
 export class DatepickerComponent {
 
-    events: string[] = [];
+    dateValue:Date;
+
+
+    @Output() dateSelected = new EventEmitter<Date>();
 
     addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-        console.log( "A date was selected: ", event.value)
-        this.events.push(`${type}: ${event.value}`);
+        this.dateValue = event.value;
+        this.sendDate()
+    }
+
+
+    sendDate()
+    {
+        this.dateSelected.emit(this.dateValue);
     }
 }
