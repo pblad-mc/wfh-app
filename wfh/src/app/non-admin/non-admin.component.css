@@ -1,10 +1,10 @@
 .outerWrapper {
-    background-color: #f7f7f7;
+    background-color: #1c1c1c; 
     width: 500px;
     margin: auto;
     height: 500px;
     border: 0.5px black solid;
-    box-shadow: 0 8px 6px -6px #565656;
+    box-shadow: 0 8px 6px -6px black;
     border-radius: 2px;
     -webkit-transition-duration: 0.7s; /* Safari */
     transition-duration: 0.7s;
@@ -13,7 +13,7 @@
 
 
 .outerWrapper:hover {
-    box-shadow: 0 18px 16px -6px #565656;
+    box-shadow: 0 18px 16px -6px black;
 
 }
 
@@ -21,6 +21,9 @@
 
 textarea{
     resize: none;
+    background-color: #282828;
+    color: white;
+    border: none;
 }
 
 
@@ -47,6 +50,7 @@ textarea{
 
 body {
     font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
 .overallWrapper {

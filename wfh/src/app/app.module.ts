@@ -18,7 +18,8 @@ import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
 import { QueryResultComponent } from './query-result/query-result.component';
- 
+import { DatepickerComponent  } from './datepicker/datepicker.component';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -71,7 +72,9 @@ import { RouterModule, Router } from '@angular/router';
     FooterComponent,
     AutocompleteFilterEmployees,
     AutocompleteFilterDates,
-    QueryResultComponent
+    QueryResultComponent,
+    DatepickerComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,9 @@ import { RouterModule, Router } from '@angular/router';
     MatInputModule,
     BrowserAnimationsModule,
     InMemoryWebApiModule.forRoot(InMemoryEntryService),
-
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRippleModule,
     RouterModule.forRoot ([
       { path: 'toNonAdmin', component: NonAdminComponent },
       { path: 'toAdmin', component: AdminComponent },
