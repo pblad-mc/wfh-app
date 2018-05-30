@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'main.java.workfromhome.WorkFromHome'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'work-from-home'
+    version = '0.1.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies{
+    //as of now there are no dependencies
+}
+
