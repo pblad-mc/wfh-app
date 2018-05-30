@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
+import { Entry } from '../shared/Entry.model';
 import { AutocompleteFilterEmployees } from '../auto-complete/autocomplete.component';
 
 
@@ -15,6 +16,7 @@ export class AdminComponent  {
     selectedUser: User
     selectedUserName: string
     date:string = "May 22, 2018"
+    entry: Entry
 
     constructor(private userService: UserService){   }
 
@@ -39,6 +41,7 @@ export class AdminComponent  {
         console.log("this is what we got ", this.selectedUserName);
         if (this.users){
             this.selectedUser = this.users.find(u => u.name == this.selectedUserName)
+            this.entry = this.selectedUser.entries.find(entry => entry.date == this.date)
         }
     }
 }
