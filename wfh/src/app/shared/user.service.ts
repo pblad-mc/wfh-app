@@ -16,5 +16,4 @@ export class UserService //The actions of the Entry
         .then((response) => response.json() as User[]);
     }
 
-
 }

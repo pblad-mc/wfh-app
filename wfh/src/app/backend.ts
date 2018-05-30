@@ -34,7 +34,14 @@ export class InMemoryEntryService implements InMemoryDbService {
                 name: "Alex Stevens",
                 username: "alex",
                 password: "alex",
-                entries: []
+                entries: [
+                    {
+                        date:"May 22, 2018",
+                        morning_didYesterday: "planning, coding, reading",
+                        morning_doingToday:"taking nap, eating burito",
+                        morning_notes:"How do I build feature?"
+                    }
+                ]
             }
         ];
         return { users };
