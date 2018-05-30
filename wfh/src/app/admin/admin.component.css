@@ -9,6 +9,7 @@
     transition-duration: 0.7s;
     width: 500px;
     float: left;
+
 }
 
 
@@ -21,12 +22,15 @@
 
 textarea{
     resize: none;
+    color: black;
+    outline-color: #ea3c3c;
+
 }
 
 
 .submitButton {
     position: relative;
-    background-color: #4CAF50;
+    background-color: #ea3c3c;
     border: none;
     font-size: 20px;
     color: white;
@@ -39,6 +43,8 @@ textarea{
     overflow: hidden;
     cursor: pointer;
     border-radius: 7px;
+    border-radius: 30px 30px 30px 30px;
+
 }
 
 .submitButton:hover {
@@ -90,13 +96,13 @@ body {
 .newEntryButtonWrapper {
     position: absolute;
     top: 30px;
-    left: 110px;
+    left: 120px;
     
 }
 
 
 .newEntryButton {
-    background-color: #6471a8;
+    background-color: #ea3c3c;
     border: none;
     font-size: 12px;
     color: white;
@@ -109,15 +115,17 @@ body {
     overflow: hidden;
     cursor: pointer;
     border-radius: 7px;
+    border-radius: 30px 30px 30px 30px;
+
 }
 
 .newEntryButton:hover {
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px black;
 }
 
 
 .logoutButton {
-    background-color: lightgray;
+    background-color: #999999;
     border: none;
     font-size: 12px;
     color: white;
@@ -129,10 +137,12 @@ body {
     overflow: hidden;
     cursor: pointer;
     border-radius: 7px;
+    border-radius: 30px 30px 30px 30px;
+
 }
 
 .logoutButton:hover {
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px black;
 }
 
 .logoutButtonWrapper {
@@ -150,3 +160,90 @@ body {
     padding: 0; 
     clear:both;
 }
+
+/*
+
+.wrapper {
+    margin: 50px auto;
+    width: 280px;
+    height: 370px;
+    background: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 90;
+  }
+  
+  .ribbon-wrapper-green {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+  }
+  
+  .ribbon-green {
+    font: bold 15px Sans-Serif;
+    color: #333;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #BFDC7A;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+    background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
+    background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
+    background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
+    background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+    color: #6a6340;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+  }
+  
+  .ribbon-green:before, .ribbon-green:after {
+    content: "";
+    border-top:   3px solid #6e8900;   
+    border-left:  3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+  }
+  
+  .ribbon-green:before {
+    left: 0;
+  }
+  .ribbon-green:after {
+    right: 0;
+  }
+  */
+
+  div.wrapper {
+    position: relative;
+    border: 0px solid cornflowerblue;
+  }
+
+
+  div.wrapper label {
+    color: black;
+    line-height: 30px;
+    padding: 0px 15px;
+    position: absolute;
+    background-color: white;
+    /* Adjust these values to posiytion the title or label */
+    top: -15px;
+    left: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+
+  }

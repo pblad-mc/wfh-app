@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+
 <body>
     <div style="text-align:center">
-    
+
         <h1>
             Work From Home Tracker
             <hr class="specialHr">
@@ -13,42 +14,33 @@
         <h4 class="failedMessage" *ngIf="loginFailed">Login Failed: Username or Password is incorrect.</h4>
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
-     
+
     <div class="login">
-    
+
+
         <div class="inputTextWrapper">
             <h3>Username</h3>
-            <input 
-            class="inputText" 
-            type="text" 
-            name="name"
-            [(ngModel)]='username' />
+            <input class="inputText" type="text" name="name"  [(ngModel)]='username' />
+
         </div>
-    
+
         <div class="inputTextWrapper">
             <h3>Password</h3>
-            <input 
-            class="inputText" 
-            type="password" 
-            name="name"
-            [(ngModel)]='password' />
+            <input class="inputText" type="password" name="name" [(ngModel)]='password' />
         </div>
-    
+
         <div style="padding-top: 50px;">
-    
-            
-            <button 
-            class="loginButton" 
-            style="background-color:#999999" 
-            (click)="employeeLogin()"> New Entry </button>
-            
+
+
+            <button class="loginButton" style="background-color:#999999" (click)="employeeLogin()"> New Entry </button>
+
             <div class="divider"></div>
 
             <button (click)="adminLogin()" class="loginButton"> Lookup </button>
         </div>
-    
-    
+
+
     </div>
 
     <footer-component></footer-component>
-</body> 
+</body>

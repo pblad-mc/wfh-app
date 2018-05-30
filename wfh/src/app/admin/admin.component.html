@@ -24,28 +24,31 @@
 
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
+    <div style="height: 50px;"></div>
 
     <div class="overallWrapper">
         <div>
-            <h4>Indivual Query</h4>
-            <div class="outerWrapper" style="height: 300px;">
+            <div class="wrapper">
+                <label  style="left: 150px;">Individual Query</label>
+                <div class="outerWrapper" style="height: 300px;">
 
-                <div class="inputTextWrapper">
+                    <div class="inputTextWrapper">
 
-                    <autocomplete-filter (selected)="receiveEmployee($event)">
-                    </autocomplete-filter>
+                        <autocomplete-filter (selected)="receiveEmployee($event)">
+                        </autocomplete-filter>
 
-                </div>
+                    </div>
 
-                <div class="inputTextWrapper">
-                    <datepicker (dateSelected)="receiveDate($event)" style="float: left;"></datepicker>
-                </div>
+                    <div class="inputTextWrapper">
+                        <datepicker (dateSelected)="receiveDate($event)" style="float: left;"></datepicker>
+                    </div>
 
-                <div style="height: 60px;"></div>
+                    <div style="height: 60px;"></div>
 
 
-                <div style="padding-top: 20px;">
-                    <button class="submitButton" (click)="showQueryResults = true"> Search </button>
+                    <div style="padding-top: 20px;">
+                        <button class="submitButton" (click)="showQueryResults = true"> Search </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,23 +56,24 @@
         <div style="height: 100px;"></div>
 
         <div>
-            <h4>Overall Query</h4>
-            <div class="outerWrapper" style="height: 150px;">
 
-                <div style="padding-top: 30px;">
-                    <button class="submitButton"> Export All to Excel </button>
+            <div class="wrapper">
+                <label>General Query</label>
+                <div class="outerWrapper" style="height: 150px;">
+
+                    <div style="padding-top: 45px;">
+                        <button class="submitButton"> Export to Excel </button>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
     <div style="height: 50px;"></div>
 
     <div class="queryResults" *ngIf="showQueryResults">
-        <query-result 
-            [user]="selectedUser"
-            [date]="date.toDateString()"
-            [entry]="entry"></query-result>
+        <query-result [user]="selectedUser" [date]="date.toDateString()" [entry]="entry"></query-result>
     </div>
 
 
