@@ -12,28 +12,35 @@ export class NonAdminComponent implements OnInit {
     _morningNotes: string
     _didToday: string
     _eveningNotes: string
-    
 
-    ngOnInit() 
-    {
+
+    test:string = "hello"
+
+
+
+
+
+    ngOnInit() {
         this.todaysDate = new Date
-    
+
     }
 
     //constructor (private username: string) { }
-    
-    morningSubmit(){
+
+    morningSubmit() {
         // put data into database
         console.log("submit morning data");
         console.log("today's date: ", this.todaysDate.toDateString());
-        
+
         console.log("Did Yesterday: ", this.didYesterday)
         console.log("Doing Today: ", this.doingToday)
         this._morningNotes ? console.log("Morning Notes: ", this.morningNotes) : null;
-        
+
+        this.postMessageToSlack()
+
     }
 
-    eveningSubmit(){
+    eveningSubmit() {
         // Need to send data to database
         console.log("submit evening data");
         console.log("today's date: ", this.todaysDate.toDateString());
@@ -75,4 +82,40 @@ export class NonAdminComponent implements OnInit {
     set eveningNotes(value: string) {
         this._eveningNotes = value;
     }
+
+
+    postMessageToSlack() {
+        var xmlhttp = new XMLHttpRequest(),
+            webhook_url = "https://hooks.slack.com/services/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",
+            myJSONStr = this.messageToSend;
+        xmlhttp.open('POST', webhook_url, false);
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(myJSONStr);
+    }
+
+    messageToSend = `payload= {
+        "username": "Work From Home",
+        "icon_url": "example.com/img/icon.jpg",
+        "attachments": [{
+            "fallback": "This attachement isn't supported.",
+            "title": "${this.test}",
+            "color": "#9C1A22",
+            "pretext": "Today's list of awesome offers picked for you",
+            "author_name": "Preethi",
+            "author_link": "https://www.hongkiat.com/blog/author/preethi/",
+            "author_icon": "https://assets.hongkiat.com/uploads/author/preethi.jpg",
+            "fields": [{
+                "title": "Sites",
+                "value": "_<http://www.amazon.com|Amazon>_\n_<http://www.ebay.com|Ebay>_",
+                "short": true
+            }, {
+                "title": "Offer Code",
+                "value": "UI90O22\n-",
+                "short": true
+            }],
+            "mrkdwn_in": ["text", "fields"],
+            "text": "Just click the site names and start buying. Get *extra reduction with the offer code*, if provided.",
+            "thumb_url": "http://example.com/thumbnail.jpg"
+        }]
+    }`
 }
