@@ -60,6 +60,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     border-radius: 30px 30px 30px 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .loginButton:hover {
