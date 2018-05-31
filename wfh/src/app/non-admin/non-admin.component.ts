@@ -140,7 +140,7 @@ export class NonAdminComponent implements OnInit {
                     "author_name": "Work From Home",
                     "author_link": "http://localhost:4200/toLogin",
                     "fields": [{
-                        "value": "_Did Yesterday:_ ${this._didYesterday}\n_Doing Today:_ ${this._doingToday}\n_Notes:_ ${this._morningNotes}",
+                        "value": "_Did Yesterday:_ \n${this._didYesterday}\n_Doing Today:_ \n${this._doingToday}\n_Notes:_ \n${this._morningNotes}",
                         "short": true
                     }],
                     "mrkdwn_in": ["text", "fields"],
@@ -167,7 +167,7 @@ export class NonAdminComponent implements OnInit {
                     "author_name": "Work From Home",
                     "author_link": "http://localhost:4200/toLogin",
                     "fields": [{
-                        "value": "_Doing Today:_ ${this._doingToday}\n_Notes:_ ${this._eveningNotes}",
+                        "value": "_Doing Today:_ \n${this._doingToday}\n_Notes:_ \n${this._eveningNotes}",
                         "short": true
                     }],
                     "mrkdwn_in": ["text", "fields"],

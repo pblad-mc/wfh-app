@@ -55,7 +55,7 @@ textarea{
 body {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    height: 100%;
+    min-height: 100vh;
 }
 
 
