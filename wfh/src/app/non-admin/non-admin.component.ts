@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Entry } from '../shared/entry.model'
 import { User } from '../shared/user.model'
 import { UserService } from '../shared/user.service';
-
 @Component({
     templateUrl: 'non-admin.component.html',
     styleUrls: ['non-admin.component.css']
@@ -42,7 +41,7 @@ export class NonAdminComponent implements OnInit {
         console.log("Doing Today: ", this.doingToday)
         this._morningNotes ? console.log("Morning Notes: ", this.morningNotes) : null;
 
-        this.postMessageToSlack()
+        this.postMessageToSlack("morning")
 
     }
 
@@ -52,6 +51,9 @@ export class NonAdminComponent implements OnInit {
         console.log("today's date: ", this.todaysDate.toDateString());
         console.log("Did Today: ", this.didYesterday)
         this.eveningNotes ? console.log("Evening Notes: ", this.eveningNotes) : null;
+
+        this.postMessageToSlack("evening")
+
     }
 
     receiveDate($event)
@@ -126,38 +128,63 @@ export class NonAdminComponent implements OnInit {
     }
 
 
-    postMessageToSlack() {
-        var xmlhttp = new XMLHttpRequest(),
-            webhook_url = "https://hooks.slack.com/services/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",
-            myJSONStr = this.messageToSend;
-        xmlhttp.open('POST', webhook_url, false);
-        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xmlhttp.send(myJSONStr);
+    postMessageToSlack(time:string) {
+        if (time == "morning"){
+            let messageToSend = `payload= {
+                "username": "WFH",
+                "icon_url": "https://assets/icon.png",
+                "attachments": [{
+                    "fallback": "This attachement isn't supported.",
+                    "title": "${this.userService.getCurrentUser().name} is working from home today [Morning]",
+                    "color": "#ea3c3c",
+                    "author_name": "Work From Home",
+                    "author_link": "http://localhost:4200/toLogin",
+                    "fields": [{
+                        "value": "_Did Yesterday:_ ${this._didYesterday}\n_Doing Today:_ ${this._doingToday}\n_Notes:_ ${this._morningNotes}",
+                        "short": true
+                    }],
+                    "mrkdwn_in": ["text", "fields"],
+                    "thumb_url": "http://example.com/thumbnail.jpg"
+                }]
+            }`
+
+
+            var xmlhttp = new XMLHttpRequest(),
+                webhook_url = "https://hooks.slack.com/services/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",
+                myJSONStr = messageToSend;
+            xmlhttp.open('POST', webhook_url, false);
+            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xmlhttp.send(myJSONStr);
+        }
+        else {
+            let messageToSend = `payload= {
+                "username": "WFH",
+                "icon_url": "https://assets/icon.png",
+                "attachments": [{
+                    "fallback": "This attachement isn't supported.",
+                    "title": "${this.userService.getCurrentUser().name} just finished working [Evening]",
+                    "color": "#ea3c3c",
+                    "author_name": "Work From Home",
+                    "author_link": "http://localhost:4200/toLogin",
+                    "fields": [{
+                        "value": "_Doing Today:_ ${this._doingToday}\n_Notes:_ ${this._eveningNotes}",
+                        "short": true
+                    }],
+                    "mrkdwn_in": ["text", "fields"],
+                    "thumb_url": "http://example.com/thumbnail.jpg"
+                }]
+            }`
+
+
+            var xmlhttp = new XMLHttpRequest(),
+                webhook_url = "https://hooks.slack.com/services/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",
+                myJSONStr = messageToSend;
+            xmlhttp.open('POST', webhook_url, false);
+            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xmlhttp.send(myJSONStr);
+
+        }
     }
 
-    messageToSend = `payload= {
-        "username": "Work From Home",
-        "icon_url": "example.com/img/icon.jpg",
-        "attachments": [{
-            "fallback": "This attachement isn't supported.",
-            "title": "${this.test}",
-            "color": "#9C1A22",
-            "pretext": "Today's list of awesome offers picked for you",
-            "author_name": "Preethi",
-            "author_link": "https://www.hongkiat.com/blog/author/preethi/",
-            "author_icon": "https://assets.hongkiat.com/uploads/author/preethi.jpg",
-            "fields": [{
-                "title": "Sites",
-                "value": "_<http://www.amazon.com|Amazon>_\n_<http://www.ebay.com|Ebay>_",
-                "short": true
-            }, {
-                "title": "Offer Code",
-                "value": "UI90O22\n-",
-                "short": true
-            }],
-            "mrkdwn_in": ["text", "fields"],
-            "text": "Just click the site names and start buying. Get *extra reduction with the offer code*, if provided.",
-            "thumb_url": "http://example.com/thumbnail.jpg"
-        }]
-    }`
+    
 }
