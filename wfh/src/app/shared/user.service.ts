@@ -1,29 +1,25 @@
-import { Entry } from './entry.model';
-import { User } from './user.model';
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {User} from './user.model';
+import {Injectable} from '@angular/core';
+import {ElasticsearchService} from '../elasticsearch.service';
 
 
 @Injectable() // This class/component now inherents from Injectable.
-export class UserService // The actions of the Entry
-{
-    private currentUser: User
+export class UserService {
+  private static readonly USER_INDEX = 'wfh_users';
+  private static readonly USER_TYPE = 'user';
+  private currentUser: User;
 
-    constructor(private http: Http){}
-    getUsers(): Promise<User[]>
-    {
-        //Converts the json file into an Entry then places them into a list
-        return this.http.get('/app/users')
-        .toPromise()
-        .then((response) => response.json() as User[]);
-    }
+  constructor(private elasticsearchService: ElasticsearchService) {}
 
-    getCurrentUser(): User {
-        return this.currentUser
-    }
+  getUsers(): Promise<any> {
+    return this.elasticsearchService.getAllDocuments(UserService.USER_INDEX, UserService.USER_TYPE);
+  }
 
-    setCurrentUser(newUser: User){
-        this.currentUser = newUser
-    }
+  getCurrentUser(): User {
+    return this.currentUser;
+  }
 
+  setCurrentUser(newUser: User) {
+    this.currentUser = newUser;
+  }
 }

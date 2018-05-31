@@ -49,4 +49,21 @@ export class ElasticsearchService {
     });
   }
 
+  getExactDocumentByTwoFields(_index, _type, searchKey1, searchTerm1, searchKey2, searchTerm2): any {
+    return this.client.search({
+      index: _index,
+      type: _type,
+      filterPath: ['hits.hits._source', 'hits.total', '_scroll_id'],
+      body: {
+        'query': {
+          'bool': {
+            'must': [
+              {'match': {[searchKey1]: searchTerm1}},
+              {'match': {[searchKey2]: searchTerm2}}
+            ]
+          }
+        }
+      }
+    });
+  }
 }

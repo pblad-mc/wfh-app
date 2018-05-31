@@ -4,6 +4,7 @@ import {User} from '../shared/user.model';
 import {Entry} from '../shared/Entry.model';
 import {AutocompleteFilterEmployeesComponent} from '../auto-complete/autocomplete.component';
 import {ElasticsearchService} from '../elasticsearch.service';
+import {EntryService} from '../entry.service';
 
 
 @Component({
@@ -12,55 +13,52 @@ import {ElasticsearchService} from '../elasticsearch.service';
 })
 
 export class AdminComponent implements OnInit {
-  private static readonly USER_INDEX = 'wfh_users';
-  private static readonly USER_TYPE = 'user';
-
   users: any[];
-  usersNames: string[];
   selectedUser: User;
   selectedUserName: string;
-  date = 'May 22, 2018';
+  date: Date;
 
   entry: Entry;
-  constructor(private elasticsearchService: ElasticsearchService) {
+  showQueryResults = false;
+
+  constructor(private userService: UserService, private entryService: EntryService) {
   }
 
   ngOnInit() {
-    this.elasticsearchService.getAllDocuments(AdminComponent.USER_INDEX, AdminComponent.USER_TYPE)
+    this.userService.getUsers()
       .then(response => {
         this.users = response.hits.hits;
         console.log(response);
       }, error => {
         console.error(error);
       }).then(() => {
-        console.log('Got all users');
-      });
-    // console.log(this.userService.getUsers().then(users => {this.users = users}));
-
-    // for (let user of this.users){
-    //     this.usersNames.push(user.name)
-    // }
-    // console.log(this.usersNames);
+      console.log('Got all users');
+    });
   }
 
-    receiveEmployee($event){
-        this.selectedUserName = $event
-        //console.log("this is what we got ", this.selectedUserName);
-        if (this.users){
-            this.selectedUser = this.users.find(u => u.name == this.selectedUserName)
-        }
-        this.getEntry()
+  receiveEmployee($event) {
+    this.selectedUserName = $event;
+    if (this.users) {
+      this.selectedUser = this.users.find(u => u.username === this.selectedUserName);
     }
+  }
 
-    receiveDate($event)
-    {
-        this.date = $event;
-        this.getEntry()
-    }
+  receiveDate($event) {
+    this.date = $event;
+  }
 
-    getEntry(){
-        if(this.selectedUser && this.date){
-            this.entry = this.selectedUser.entries.find(entry => entry.date == this.date.toDateString())
-        }
+  getEntry() {
+    if (this.selectedUser && this.date) {
+      this.entryService.getEntryByDateAndUsername(this.date.toLocaleDateString('en-US'), this.selectedUser.username)
+        .then(response => {
+          this.entry = response.hits.hits;
+          console.log(response);
+        }, error => {
+          console.error(error);
+        }).then(() => {
+          console.log('search completed!');
+          this.showQueryResults = true;
+        });
     }
+  }
 }

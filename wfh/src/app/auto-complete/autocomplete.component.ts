@@ -19,7 +19,7 @@ export class AutocompleteFilterEmployeesComponent implements OnInit {
 
   myControl: FormControl = new FormControl();
   filteredEmployees: Observable<string[]>;
-  value:string;
+  value: string;
 
   @Output() selected = new EventEmitter<string>();
 
@@ -31,7 +31,7 @@ export class AutocompleteFilterEmployeesComponent implements OnInit {
     this.filteredEmployees = this.myControl.valueChanges
       .pipe(startWith(''), map(val => this.filter(val)) );
       this.userService.getUsers().then(users => {
-        for(const user of users){
+        for(const user of users) {
           this.employees.push(user.username);
         }
       });
@@ -45,8 +45,7 @@ export class AutocompleteFilterEmployeesComponent implements OnInit {
     return filteredString;
   }
 
-  setValue()
-  {
+  setValue() {
     console.log('Printing out selected value');
     console.log(this.value);
   }
@@ -55,7 +54,7 @@ export class AutocompleteFilterEmployeesComponent implements OnInit {
     return this.value;
   }
 
-  sendValue(){
+  sendValue() {
     this.selected.emit(this.value);
   }
 }

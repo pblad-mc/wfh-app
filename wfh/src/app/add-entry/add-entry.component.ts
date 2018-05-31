@@ -1,8 +1,7 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ElasticsearchService} from '../elasticsearch.service';
 import {Entry} from '../shared/entry.model';
-import {AddUserComponent} from '../add-user/add-user.component';
-import { v4 as uuid } from 'uuid';
+import {EntryService} from '../entry.service';
 
 @Component({
   selector: 'app-add-entry',
@@ -10,10 +9,6 @@ import { v4 as uuid } from 'uuid';
   styleUrls: ['./add-entry.component.css']
 })
 export class AddEntryComponent implements OnInit {
-
-  private static readonly ENTRY_INDEX = 'wfh_entries';
-  private static readonly MORNING_ENTRY_TYPE = 'morning_entry';
-
   isConnected: boolean;
   status: string;
   entry: Entry = {
@@ -23,10 +18,11 @@ export class AddEntryComponent implements OnInit {
     morning_doingToday: '',
     morning_notes: '',
     evening_didToday: '',
-    evening_notes: '',
+    evening_notes: ''
   };
 
   constructor(private elasticsearchService: ElasticsearchService,
+              private entryService: EntryService,
               private cd: ChangeDetectorRef) {
     this.isConnected = false;
     this.status = '';
@@ -43,20 +39,12 @@ export class AddEntryComponent implements OnInit {
     }).then(() => {
       this.cd.detectChanges();
     });
+
+    this.entry.date = new Date().toLocaleDateString();
   }
 
   submitMorning() {
-    this.elasticsearchService.addToIndex({
-      index: AddEntryComponent.ENTRY_INDEX,
-      type: AddEntryComponent.MORNING_ENTRY_TYPE,
-      id: uuid(),
-      body: {
-        username: this.entry.username,
-        date: this.entry.date,
-        morning_didYesterday: this.entry.morning_didYesterday,
-        morning_doingToday: this.entry.morning_notes
-      }
-    }).then((result) => {
+    this.entryService.addNewMorningEntry(this.entry).then((result) => {
       console.log(result);
       alert('Morning Entry added, see log for more info');
     }, error => {

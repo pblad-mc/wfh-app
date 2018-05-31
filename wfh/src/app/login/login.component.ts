@@ -28,9 +28,16 @@ export class LoginComponent implements OnInit {
     {   //why is this empty? Where are there parameters if it does nothing with them?
     }
 
-    ngOnInit()
-    {
-        this.userService.getUsers().then(users => this.users = users);
+    ngOnInit() {
+        this.userService.getUsers()
+          .then(response => {
+            this.users = response.hits.hits;
+            console.log(response);
+          }, error => {
+            console.error(error);
+          }).then(() => {
+          console.log('Got all users');
+        });
     }
 
     get username(): string {
@@ -67,7 +74,7 @@ export class LoginComponent implements OnInit {
 
 
 
-    check_if_validation_is_true( username:string , password:string )
+    check_if_validation_is_true( username:string, password:string )
     {
             for(let u of this.users)
             {
