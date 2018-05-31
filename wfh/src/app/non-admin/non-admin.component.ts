@@ -17,6 +17,7 @@ export class NonAdminComponent implements OnInit {
     ngOnInit() 
     {
         this.todaysDate = new Date
+    
     }
 
     //constructor (private username: string) { }
