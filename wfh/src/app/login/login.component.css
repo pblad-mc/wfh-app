@@ -1,0 +1,95 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    /*background: linear-gradient(to bottom right, #3d3d3d, #262626);*/
+    margin:0;
+    padding: 0;
+    color: white;
+
+
+    background: rgba(76, 175, 80, 0.0); /* Green background with 30% opacity */
+    height: 100%;
+
+}
+
+.login {
+    background-color: #f7f7f7; /*f7f7f7   1c1c1c*/
+    width: 500px;
+    margin: auto;
+    height: 350px;
+    color: black;
+    border: 0.5px #494949 solid;
+    box-shadow: 0 8px 6px -6px black; /*565656*/
+    border-radius: 2px;
+    -webkit-transition-duration: 0.7s; /* Safari */
+    transition-duration: 0.7s;
+}
+
+.login:hover {
+    box-shadow: 0 18px 16px -6px black; /*565656*/
+
+}
+
+.inputTextWrapper {
+    padding: 10px;
+}
+
+.inputTextWrapper h3 {
+    text-align: center;
+}
+
+.inputText {
+    width: 70%;   
+    border: 0px solid black;
+    color: black;
+    border-bottom-width: 1px;
+    background-color: transparent;
+    font-size: 2em;
+    outline-color: #ea3c3c;
+}
+
+.loginButton {
+    position: relative;
+    background-color: #ea3c3c; /*4CAF50*/
+    border: none;
+    font-size: 15px;
+    color: white;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.loginButton:hover {
+    box-shadow: 5px 10px 18px #888888;
+}
+
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.MCImage {
+    padding-top: 10px;
+    width: 20%;
+}
+
+.failedMessage {
+    color: red
+}
+
+
+.specialHr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #ea3c3c;
+    margin: 1em 0;
+    padding: 0; 
+    clear:both;
+}
