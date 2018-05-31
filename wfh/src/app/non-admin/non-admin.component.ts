@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Entry } from '../shared/entry.model'
+import { User } from '../shared/user.model'
+import { UserService } from '../shared/user.service';
 
 @Component({
     templateUrl: 'non-admin.component.html',
@@ -7,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class NonAdminComponent implements OnInit {
     todaysDate: Date
+    entry: Entry
     _didYesterday: string
     _doingToday: string
     _morningNotes: string
     _didToday: string
     _eveningNotes: string
+
+    constructor( private userService: UserService) { }
 
 
     test:string = "hello"
@@ -22,7 +28,7 @@ export class NonAdminComponent implements OnInit {
 
     ngOnInit() {
         this.todaysDate = new Date
-
+        this.retrieveEntry()
     }
 
     //constructor (private username: string) { }
@@ -46,6 +52,42 @@ export class NonAdminComponent implements OnInit {
         console.log("today's date: ", this.todaysDate.toDateString());
         console.log("Did Today: ", this.didYesterday)
         this.eveningNotes ? console.log("Evening Notes: ", this.eveningNotes) : null;
+    }
+
+    receiveDate($event)
+    {
+        this.todaysDate = $event;
+        this.retrieveEntry()
+    }
+
+    retrieveEntry(){
+        if(this.userService.getCurrentUser()){
+            this.entry = this.userService.getCurrentUser().entries.find(entry => entry.date == this.todaysDate.toDateString())
+            if ( this.entry ){
+                if ( this.entry.morning_didYesterday ){
+                    this._didYesterday = this.entry.morning_didYesterday
+                }
+                if ( this.entry.morning_doingToday ){
+                    this._doingToday = this.entry.morning_doingToday
+                }
+                if ( this.entry.morning_notes ){
+                    this._morningNotes = this.entry.morning_notes
+                }
+                if ( this.entry.evening_didToday ){
+                    this._didToday = this.entry.evening_didToday
+                }
+                if ( this.entry.evening_notes ){
+                    this._eveningNotes = this.entry.evening_notes
+                }
+            }
+            else{
+                this._didYesterday = ""
+                this._doingToday = ""
+                this._morningNotes = ""
+                this._didToday = ""
+                this._eveningNotes = ""
+            }
+        }
     }
 
     get didYesterday(): string {

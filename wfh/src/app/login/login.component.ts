@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private userService: UserService,
-        private router: Router)
+        private router: Router )
     {   //why is this empty? Where are there parameters if it does nothing with them? 
     }
 
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         
         if (this.userFound && this.userFound.password == this.password){
             this.loginFailed = false
-            localStorage.setItem('currentUser', JSON.stringify(this.userFound));
+            this.userService.setCurrentUser(this.userFound)            
             this.router.navigate([this.routingUrl]);
         }
         else {
