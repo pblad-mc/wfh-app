@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
 import { Entry } from '../shared/Entry.model';
@@ -10,7 +10,7 @@ import { AutocompleteFilterEmployees } from '../auto-complete/autocomplete.compo
     styleUrls: ['admin.component.css']
 })
 
-export class AdminComponent  {
+export class AdminComponent implements OnInit {
     users: User[]
     usersNames: string[] 
     selectedUser: User
