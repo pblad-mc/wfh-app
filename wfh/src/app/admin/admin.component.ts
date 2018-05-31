@@ -19,7 +19,7 @@ export class AdminComponent implements OnInit {
   usersNames: string[];
   selectedUser: User;
   selectedUserName: string;
-  date = 'May 22, 2018';
+  date: Date;
 
   entry: Entry;
   constructor(private elasticsearchService: ElasticsearchService) {

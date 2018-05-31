@@ -38,6 +38,7 @@ export class QueryResultComponent implements OnInit {
         else {
             this.entry = {
                 date: this.date,
+                username: this.user.username,
                 morning_didYesterday: "--",
                 morning_doingToday: "--",
                 morning_notes: "--",
