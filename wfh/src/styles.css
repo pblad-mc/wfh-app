@@ -8,6 +8,7 @@ body {
     align-content: stretch;
     align-items: stretch;
     height: 100%;
+    
 
     background-image: radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
 	background-image: -o-radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
