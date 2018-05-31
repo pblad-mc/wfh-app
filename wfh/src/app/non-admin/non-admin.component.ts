@@ -72,6 +72,13 @@ export class NonAdminComponent implements OnInit {
                     this._eveningNotes = this.entry.evening_notes
                 }
             }
+            else{
+                this._didYesterday = ""
+                this._doingToday = ""
+                this._morningNotes = ""
+                this._didToday = ""
+                this._eveningNotes = ""
+            }
         }
     }
 
