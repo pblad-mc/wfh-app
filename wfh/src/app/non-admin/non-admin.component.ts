@@ -28,7 +28,7 @@ export class NonAdminComponent implements OnInit {
         
         console.log("Did Yesterday: ", this.didYesterday)
         console.log("Doing Today: ", this.doingToday)
-        this._morningNotes ? console.log("Morning Notes: ", this.morningNotes) : null;
+        this.morningNotes ? console.log("Morning Notes: ", this.morningNotes) : null;
         
     }
 

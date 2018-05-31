@@ -44,7 +44,7 @@
 
                 <div class="inputTextWrapper">
                     <h3>Notes</h3>
-                    <textarea name="notes" rows="4" [(ngModel)]='notes' cols="50"></textarea>
+                    <textarea name="notes" rows="4" [(ngModel)]='morningNotes' cols="50"></textarea>
                 </div>
 
                 <div style="padding-top: 20px;">
@@ -59,12 +59,21 @@
 
                 <div class="inputTextWrapper">
                     <h3>Did Today</h3>
-                    <textarea name="didYesterday" rows="4" cols="50" required></textarea>
+                    <textarea 
+                        name="didYesterday" 
+                        rows="4" 
+                        cols="50" 
+                        required
+                        [(ngModel)]="didToday"></textarea>
                 </div>
 
                 <div class="inputTextWrapper">
                     <h3>Notes</h3>
-                    <textarea name="notes" rows="4" cols="50"></textarea>
+                    <textarea 
+                    name="notes"
+                    rows="4"
+                    cols="50" 
+                    [(ngModel)]="eveningNotes"></textarea>
                 </div>
 
                 <div style="padding-top: 20px;">
