@@ -14,6 +14,8 @@ export class QueryResultComponent implements OnInit {
     @Input() date: string
     @Input() entry: Entry
 
+    dateString:string
+
     ngOnInit() 
     {   
         if (this.entry) {

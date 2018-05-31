@@ -20,14 +20,27 @@
         <h1>
             New Entry
         </h1>
-        <hr>
+        <hr class="specialHr">
+
         <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
 
+    <div style="height: 10px;"></div>
+
+    <h4>Select Date</h4>
+
+    <div class="outerWrapper" style="height: 100px; width: 300px; padding-top: 30px;">
+        <datepicker (dateSelected)="receiveDate($event)" ></datepicker>
+    </div>
+
+    <div style="height: 40px;"></div>
+
     <div class="overallWrapper">
 
-        <div>
-            <h4>Morning Log</h4>
+        <div style="position: relative;">
+            <div>
+                <h4>Morning Log</h4>
+            </div>
             <div class="outerWrapper">
                 <div class="inputTextWrapper">
                     <h3>Did Yesterday</h3>
@@ -41,11 +54,11 @@
 
                 <div class="inputTextWrapper">
                     <h3>Notes</h3>
-                    <textarea name="notes" rows="4" [(ngModel)]='notes' cols="50"></textarea>
+                    <textarea name="notes" rows="4" [(ngModel)]='morningNotes' cols="50"></textarea>
                 </div>
 
                 <div style="padding-top: 20px;">
-                    <button class="submitButton" (click)="submit()"> Submit </button>
+                    <button class="submitButton" (click)="morningSubmit()"> SUBMIT </button>
                 </div>
             </div>
         </div>
@@ -56,16 +69,25 @@
 
                 <div class="inputTextWrapper">
                     <h3>Did Today</h3>
-                    <textarea name="didYesterday" rows="4" cols="50" required></textarea>
+                    <textarea 
+                        name="didYesterday" 
+                        rows="4" 
+                        cols="50" 
+                        required
+                        [(ngModel)]="didToday"></textarea>
                 </div>
 
                 <div class="inputTextWrapper">
                     <h3>Notes</h3>
-                    <textarea name="notes" rows="4" cols="50"></textarea>
+                    <textarea 
+                    name="notes"
+                    rows="4"
+                    cols="50" 
+                    [(ngModel)]="eveningNotes"></textarea>
                 </div>
 
                 <div style="padding-top: 20px;">
-                    <button class="submitButton"> Submit </button>
+                    <button class="submitButton" (click)="eveningSubmit"> SUBMIT </button>
                 </div>
             </div>
         </div>

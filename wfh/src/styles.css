@@ -8,10 +8,17 @@ body {
     align-content: stretch;
     align-items: stretch;
     height: 100%;
+    
 
     background-image: radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
 	background-image: -o-radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
 	background-image: -ms-radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
 	background-image: -moz-radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
     background-image: -webkit-radial-gradient(center bottom, ellipse cover, #3d3d3d, #262626);
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    font-family: 'Montserrat', sans-serif;
+
   }

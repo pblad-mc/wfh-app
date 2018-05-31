@@ -7,16 +7,15 @@ body {
 
 
     background: rgba(76, 175, 80, 0.0); /* Green background with 30% opacity */
-    height: 100%;
-
+    height: 100vh;
 }
 
 .login {
-    background-color: #1c1c1c; /*f7f7f7*/
+    background-color: #f7f7f7; /*f7f7f7   1c1c1c*/
     width: 500px;
     margin: auto;
     height: 350px;
-    color: white;
+    color: black;
     border: 0.5px #494949 solid;
     box-shadow: 0 8px 6px -6px black; /*565656*/
     border-radius: 2px;
@@ -39,11 +38,12 @@ body {
 
 .inputText {
     width: 70%;   
-    border: 0px solid white;
-    color: white;
+    border: 0px solid black;
+    color: black;
     border-bottom-width: 1px;
     background-color: transparent;
     font-size: 2em;
+    outline-color: #ea3c3c;
 }
 
 .loginButton {
@@ -57,15 +57,14 @@ body {
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    text-decoration: none;
     overflow: hidden;
     cursor: pointer;
     border-radius: 30px 30px 30px 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .loginButton:hover {
-    /*box-shadow: 5px 10px 18px black;*/ /*#888888*/
-    border: 0.5px solid white;
+    box-shadow: 5px 10px 18px #888888;
 }
 
 

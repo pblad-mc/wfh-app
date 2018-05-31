@@ -5,27 +5,28 @@
     </div>
     <h1>Report</h1>
     <div>
-        <h4 style="text-align:left;float:left; padding-left: 50px;">Name</h4>
+        <h4 style="text-align:left;float:left; padding-left: 50px; color: gray;">Name</h4>
         <h2 style="text-align:right;float:right; padding-right: 50px;">{{user.name}}</h2>
         <hr style="clear:both;" />
     </div>
 
     <div>
-        <h4 style="text-align:left;float:left; padding-left: 50px;">Date</h4>
+        <h4 style="text-align:left;float:left; padding-left: 50px; color: gray;">Date</h4>
         <h2 style="text-align:right;float:right; padding-right: 50px;">{{date}}</h2>
         <hr style="clear:both;" />
     </div>
 
     <div>
-        <h3>Morning</h3>
+        <h3 style="color: gray;">Morning</h3>
     </div>
 
     <div>
         <div class="leftText">
-            <h3>Did Yesterday</h3>
+            <h3 style="color: gray;">Did Yesterday</h3>
         </div>
         <div class="rightText">
-            <h3 style="display: block;">
+
+            <h3 style="display: block; text-transform: capitalize;">
                 {{entry.morning_didYesterday}}
             </h3>
         </div>
@@ -33,21 +34,21 @@
 
 
         <div class="leftText">
-            <h3>Doing Today</h3>
+            <h3 style="color: gray;">Doing Today</h3>
         </div>
         <div class="rightText">
-            <h3 style="display: block;">
-                {{entry.morning_doingToday}} 
+            <h3 style="display: block; text-transform: capitalize;">
+                {{entry.morning_doingToday}}
             </h3>
         </div>
         <hr class="specialHr" />
 
 
         <div class="leftText">
-            <h3>Notes</h3>
+            <h3 style="color: gray;">Notes</h3>
         </div>
         <div class="rightText">
-            <h3 style="display: block;">
+            <h3 style="display: block; text-transform: capitalize;">
                 {{entry.morning_notes}}
             </h3>
         </div>
@@ -57,25 +58,25 @@
     </div>
 
     <div>
-        <h3>Evening</h3>
+        <h3 style="color: gray;">Evening</h3>
     </div>
 
     <div>
         <div class="leftText">
-            <h3>Did Today</h3>
+            <h3 style="color: gray;">Did Today</h3>
         </div>
         <div class="rightText">
-            <h3 style="display: block;">
+            <h3 style="display: block; text-transform: capitalize;">
                 {{entry.evening_didToday}}
             </h3>
         </div>
         <hr class="specialHr" />
 
         <div class="leftText">
-            <h3>Notes</h3>
+            <h3 style="color: gray;">Notes</h3>
         </div>
         <div class="rightText">
-            <h3 style="display: block;">
+            <h3 style="display: block; text-transform: capitalize;">
                 {{entry.evening_notes}}
             </h3>
         </div>
