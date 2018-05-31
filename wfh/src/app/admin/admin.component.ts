@@ -49,7 +49,6 @@ export class AdminComponent implements OnInit {
     receiveDate($event)
     {
         this.date = $event;
-        console.log("Admin just received the date:" , this.date.toString);
         this.getEntry()
     }
 

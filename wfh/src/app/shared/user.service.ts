@@ -7,6 +7,8 @@ import { Http } from '@angular/http';
 @Injectable() //This class/component now inherents from Injectable. 
 export class UserService //The actions of the Entry
 {
+    private currentUser: User
+
     constructor(private http: Http){}
     getUsers(): Promise<User[]>
     {
@@ -14,6 +16,14 @@ export class UserService //The actions of the Entry
         return this.http.get('/app/users')
         .toPromise()
         .then((response) => response.json() as User[]);
+    }
+
+    getCurrentUser(): User {
+        return this.currentUser 
+    }
+
+    setCurrentUser(newUser: User){
+        this.currentUser = newUser
     }
 
 }
