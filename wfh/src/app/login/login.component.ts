@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
     constructor(
         private userService: UserService,
         private router: Router)
-    {   //why is this empty? Where are there parameters if it does nothing with them? 
+    {   //why is this empty? Where are there parameters if it does nothing with them?
     }
 
-    ngOnInit() 
+    ngOnInit()
     {
         this.userService.getUsers().then(users => this.users = users);
     }
@@ -48,13 +48,13 @@ export class LoginComponent implements OnInit {
     }
 
     employeeLogin(){
-        this.routingUrl = '/toNonAdmin'
+        this.routingUrl = '/addEntry'
         this.login()
     }
 
     login(){
         this.userFound = this.users.find(u => u.username == this.username)
-        
+
         if (this.userFound && this.userFound.password == this.password){
             this.loginFailed = false
             localStorage.setItem('currentUser', JSON.stringify(this.userFound));
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    
+
 
     check_if_validation_is_true( username:string , password:string )
     {

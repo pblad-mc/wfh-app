@@ -1,0 +1,31 @@
+<div class="row">
+  <h3 class="col-md-8 text-center">Elasticsearch server status: {{status}}</h3>
+</div>
+<div class="col-md-8">
+  <div class="row">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <div class="panel panel-primary">
+        <div class="panel-heading">New User</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label class="control-label" for="id">ID</label>
+            <input type="number" class="form-control" id="id" formControlName="id" [(ngModel)]="model.id" name="id">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" [(ngModel)]="model.firstName" name="firstName">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" [(ngModel)]="model.lastName" name="lastName">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="username">Username</label>
+            <input type="text" class="form-control" id="username" formControlName="username" [(ngModel)]="model.username" name="username">
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!isConnected" class="btn btn-primary pull-right">Submit</button>
+    </form>
+  </div>
+</div>

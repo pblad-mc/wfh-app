@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { NonAdminComponent } from './non-admin/non-admin.component';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer-component/footer-compoent';
-import { AutocompleteFilterEmployees } from './auto-complete/autocomplete.component';
+import { AutocompleteFilterEmployeesComponent } from './auto-complete/autocomplete.component';
 import { AutocompleteFilterDates } from './autocomplete-dates/autocomplete-dates.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
@@ -61,20 +61,26 @@ import {CdkTableModule} from '@angular/cdk/table';
 
 
 import { RouterModule, Router } from '@angular/router';
+import { TestEsComponent } from './test-es/test-es.component';
+import { ElasticsearchService } from './elasticsearch.service';
+import { AddUserComponent } from './add-user/add-user.component';
+import { AddEntryComponent } from './add-entry/add-entry.component';
 
 
 @NgModule({
-  declarations: [ //"Now you can use the login tag that is referenced in the html"
+  declarations: [ // "Now you can use the login tag that is referenced in the html"
     AppComponent,
     LoginComponent,
     NonAdminComponent,
     AdminComponent,
     FooterComponent,
-    AutocompleteFilterEmployees,
+    AutocompleteFilterEmployeesComponent,
     AutocompleteFilterDates,
     QueryResultComponent,
     DatepickerComponent,
-
+    TestEsComponent,
+    AddUserComponent,
+    AddEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -93,11 +99,13 @@ import { RouterModule, Router } from '@angular/router';
       { path: 'toNonAdmin', component: NonAdminComponent },
       { path: 'toAdmin', component: AdminComponent },
       { path: 'toLogin', component: LoginComponent },
+      { path: 'addUser', component: AddUserComponent },
+      { path: 'addEntry', component: AddEntryComponent },
       { path: '', redirectTo: 'toLogin', pathMatch: 'full'},
       { path: '**', redirectTo: 'toLogin', pathMatch: 'full'}
     ])
   ],
-  providers: [ UserService ],
+  providers: [ UserService, ElasticsearchService ],
   bootstrap: [ AppComponent ]
 })
 
