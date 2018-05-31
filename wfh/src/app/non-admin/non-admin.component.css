@@ -62,6 +62,7 @@ textarea{
 body {
     font-family: 'Montserrat', sans-serif;
     color: white;
+    height: 100%;
 }
 
 .overallWrapper {
