@@ -1,4 +1,4 @@
-<form (submit)="onSubmit()" #commentForm="ngForm">
+<form (submit)="onSubmit()" (onChange)="updateQuery()" #commentForm="ngForm">
 
     <div style="padding-top: 0px;">
         <button class="submitButton">x</button>
