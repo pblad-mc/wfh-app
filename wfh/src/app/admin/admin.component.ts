@@ -23,6 +23,7 @@ export class AdminComponent implements OnInit {
 
     ngOnInit() 
     {
+        this.date = new Date()
         console.log(this.userService.getUsers().then(users => {this.users = users}));
         
 
@@ -55,6 +56,16 @@ export class AdminComponent implements OnInit {
     getEntry(){
         if(this.selectedUser && this.date){
             this.entry = this.selectedUser.entries.find(entry => entry.date == this.date.toDateString())
+            if ( !this.entry ){
+                this.entry = {
+                    date: this.date.toDateString(),
+                    morning_didYesterday: "--",
+                    morning_doingToday: "--",
+                    morning_notes: "--",
+                    evening_didToday: "--",
+                    evening_notes: "--"
+                }
+            }
         }
     }
 }

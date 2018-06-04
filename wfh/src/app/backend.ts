@@ -39,7 +39,15 @@ export class InMemoryEntryService implements InMemoryDbService {
                         date:"Tue May 22 2018",
                         morning_didYesterday: "planning, coding, reading",
                         morning_doingToday:"taking nap, eating burito",
-                        morning_notes:"How do I build feature?"
+                        morning_notes:"How do I build feature?",
+                        evening_didToday:"wrotes some cool tests",
+                        evening_notes:"waiting for x story to be done"
+                    },
+                    {
+                        date:"Fri Jun 01 2018",
+                        morning_didYesterday: "entry page functionality, and slack integration",
+                        morning_doingToday:"manager demo, and fortnightly training",
+                        morning_notes:"no blockers"
                     }
                 ]
             }

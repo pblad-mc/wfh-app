@@ -45,5 +45,5 @@ export class QueryResultComponent implements OnInit {
                 evening_notes: "--"
             }
         }
-    }   
+    }
 }
