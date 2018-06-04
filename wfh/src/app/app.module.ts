@@ -19,6 +19,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
 import { QueryResultComponent } from './query-result/query-result.component';
 import { DatepickerComponent  } from './datepicker/datepicker.component';
+import { QueryResultTableComponent } from './query-result-table/query-result-table.component';
 
 import {
   MatAutocompleteModule,
@@ -74,6 +75,7 @@ import { RouterModule, Router } from '@angular/router';
     AutocompleteFilterDates,
     QueryResultComponent,
     DatepickerComponent,
+    QueryResultTableComponent,
 
   ],
   imports: [

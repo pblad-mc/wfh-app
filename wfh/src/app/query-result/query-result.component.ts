@@ -10,7 +10,7 @@ import { Entry } from '../shared/entry.model';
 })
 
 export class QueryResultComponent implements OnInit {
-    @Input() user: User
+    @Input() user: User //Receiving this user from the input text selection
     @Input() date: string
     @Input() entry: Entry
 

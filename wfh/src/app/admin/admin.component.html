@@ -66,6 +66,8 @@
 
     <div style="height: 50px;"></div>
 
+    <div><query-result-table></query-result-table></div>
+
     <div class="queryResults" *ngIf="showQueryResults">
         <query-result [user]="selectedUser" [date]="date.toDateString()" [entry]="entry"></query-result>
     </div>

@@ -1,0 +1,17 @@
+<table>
+    <td>
+        <strong>Date</strong>
+    </td>
+    <td>
+        <strong>Test</strong>
+    </td>
+
+    <tr *ngFor="let entry of entriesFromUser">
+        <td>{{ entry.date }}</td>
+        <td>{{ entry.morning_didYesterday }}</td>
+        <td>{{ entry.morning_doingToday }}</td>
+        <td>{{ entry.morning_notes }}</td>
+        <td>{{ entry.evening_didToday }}</td>
+        <td>{{ entry.evening_notes }}</td>
+    </tr>
+</table>
