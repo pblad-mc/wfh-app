@@ -11,11 +11,26 @@ import { Entry } from '../shared/entry.model';
 
 export class QueryResultTableComponent implements OnInit{
     @Input() user: User //Receiving this user from the input text selection
+    @Input() date: string
+    @Input() entry: Entry
 
-    entriesFromUser: Entry[]
+
+    entriesFromUser: Entry[] = [];
 
     ngOnInit()
     {
-        this.entriesFromUser = this.user.entries
+
+        console.log(this.user, "user")
+        console.log(this.date, "date")
+        console.log(this.entry, "entry")
+
+        //If we only have the user name selected
+        if (this.user && !this.date) {
+            this.entriesFromUser = this.user.entries
+        }
+
+        else if (this.user && this.date && this.entry){
+            this.entriesFromUser.push(this.entry);
+        }
     }
 }

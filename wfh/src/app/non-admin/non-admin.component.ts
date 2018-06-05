@@ -15,6 +15,8 @@ export class NonAdminComponent implements OnInit {
     _morningNotes: string
     _didToday: string
     _eveningNotes: string
+    _startTime: string
+    _endTime: string
 
     constructor( private userService: UserService) { }
 
@@ -90,6 +92,19 @@ export class NonAdminComponent implements OnInit {
                 this._eveningNotes = ""
             }
         }
+    }
+
+    get startTime(): string {
+        return this._startTime
+    }
+    set startTime(value: string) {
+        this._startTime = value;
+    }
+    get endTime(): string {
+        return this._endTime
+    }
+    set endTime(value: string) {
+        this._endTime = value;
     }
 
     get didYesterday(): string {

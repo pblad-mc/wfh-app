@@ -27,11 +27,13 @@
 
     <div style="height: 10px;"></div>
 
-    <h4>Select Date</h4>
-
-    <div class="outerWrapper" style="height: 100px; width: 300px; padding-top: 30px;">
-        <datepicker (dateSelected)="receiveDate($event)" ></datepicker>
-    </div>
+    <!--
+        <h4>Select Date</h4>
+    
+        <div class="outerWrapper" style="height: 100px; width: 300px; padding-top: 30px;">
+            <datepicker (dateSelected)="receiveDate($event)" ></datepicker>
+        </div>
+    -->
 
     <div style="height: 40px;"></div>
 
@@ -42,13 +44,15 @@
                 <h4>Morning Log</h4>
             </div>
             <div class="outerWrapper">
-                <div class="inputTextWrapper">
-                    <h3>Did Yesterday</h3>
-                    <textarea name="didYesterday" rows="4" cols="50" [(ngModel)]='didYesterday' required></textarea>
-                </div>
+                <!--
+                    <div class="inputTextWrapper">
+                        <h3>Did Yesterday</h3>
+                        <textarea name="didYesterday" rows="4" cols="50" [(ngModel)]='didYesterday' required></textarea>
+                    </div>
+                -->
 
                 <div class="inputTextWrapper">
-                    <h3>Doing Today</h3>
+                    <h3>Plan For Today</h3>
                     <textarea name="doToday" rows="4" cols="50" [(ngModel)]='doingToday' required></textarea>
                 </div>
 
@@ -65,10 +69,10 @@
 
         <div>
             <h4>Evening Log</h4>
-            <div class="outerWrapper" style="height: 380px;">
+            <div class="outerWrapper">
 
                 <div class="inputTextWrapper">
-                    <h3>Did Today</h3>
+                    <h3>Accomplished Today</h3>
                     <textarea 
                         name="didYesterday" 
                         rows="4" 

@@ -1,17 +1,49 @@
-<table>
-    <td>
-        <strong>Date</strong>
-    </td>
-    <td>
-        <strong>Test</strong>
-    </td>
+<div style="padding-left: 50px;
+padding-right: 50px;">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                </th>
+                <th colspan="4">
+                    Morning
+                </th>
+                <th colspan="3">
+                    Evening
+                </th>
+            </tr>
 
-    <tr *ngFor="let entry of entriesFromUser">
-        <td>{{ entry.date }}</td>
-        <td>{{ entry.morning_didYesterday }}</td>
-        <td>{{ entry.morning_doingToday }}</td>
-        <td>{{ entry.morning_notes }}</td>
-        <td>{{ entry.evening_didToday }}</td>
-        <td>{{ entry.evening_notes }}</td>
-    </tr>
-</table>
+            <tr>
+                <th style="background-color: #888888;">
+                    Date
+                </th>
+                <th style="background-color: #888888;"> Start Time
+                </th>
+                <th style="background-color: #888888;"> Did Yesterday (Labs)
+                </th>
+                <th style="background-color: #888888;"> Plan For Today
+                </th>
+                <th style="background-color: #888888;"> Notes
+                </th>
+                <th style="background-color: #888888;"> End Time
+                </th>
+                <th style="background-color: #888888;"> Accomplished Today
+                </th>
+                <th style="background-color: #888888;"> Note
+                </th>
+            </tr>
+        </thead>
+
+        <tr *ngFor="let entry of entriesFromUser">
+            <td>{{ entry.date }}</td>
+            <td>{{ entry.morning_startTime }}</td>
+            <td>{{ entry.morning_didYesterday }}</td>
+            <td>{{ entry.morning_doingToday }}</td>
+            <td>{{ entry.morning_notes }}</td>
+            <td>{{ entry.evening_endTime }} </td>
+            <td>{{ entry.evening_didToday }}</td>
+            <td>{{ entry.evening_notes }}</td>
+        </tr>
+    </table>
+
+</div>

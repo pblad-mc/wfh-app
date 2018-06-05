@@ -1,4 +1,35 @@
 table {
-    background-color: red;
-    
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #ea3c3c;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+    animation-delay: 1s;
+  }
+  table tr:hover {
+    background: white;
+  }
+  table tr:hover td {
+    background: lightgray;
+    color: black;
+  }
+  table th, table td {
+    color: black;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+  }
+  table th {
+    background: #ea3c3c;
+    color: #fff;
 }
+  table th.last {
+    border-right: none;
+  }
+
+  table td {
+    text-transform: capitalize;
+    background: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif
+  }

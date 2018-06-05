@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, ViewChild, OnInit } from '@angular/core'; //EventEmitter sends data between two components
+import { Component, Input, ViewChild, OnInit } from '@angular/core'; //EventEmitter sends data between two components
 import { NgForm } from '@angular/forms';
 import { User } from '../shared/user.model';
 import { Entry } from '../shared/entry.model';
@@ -38,9 +38,11 @@ export class QueryResultComponent implements OnInit {
         else {
             this.entry = {
                 date: this.date,
+                morning_startTime: "--",
                 morning_didYesterday: "--",
                 morning_doingToday: "--",
                 morning_notes: "--",
+                evening_endTime: "--",
                 evening_didToday: "--",
                 evening_notes: "--"
             }
