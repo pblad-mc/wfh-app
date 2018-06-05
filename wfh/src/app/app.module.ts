@@ -7,11 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { LookupComponent } from './lookup/lookup.component';
 import { FooterComponent } from './footer-component/footer-compoent';
-import { AutocompleteFilterEmployees } from './auto-complete/autocomplete.component';
+import { AutocompleteFilterEmployeesComponent } from './auto-complete/autocomplete.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
-import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -21,53 +20,22 @@ import { QueryResultTableComponent } from './query-result-table/query-result-tab
 
 import {
   MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
   MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
   MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTreeModule,
+  MatRippleModule
 } from '@angular/material';
 
-import {CdkTableModule} from '@angular/cdk/table';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     LoginComponent,
     NewEntryComponent,
     LookupComponent,
     FooterComponent,
-    AutocompleteFilterEmployees,
+    AutocompleteFilterEmployeesComponent,
     DatepickerComponent,
     QueryResultTableComponent,
   ],
