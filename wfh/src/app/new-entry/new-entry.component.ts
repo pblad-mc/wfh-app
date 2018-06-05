@@ -3,11 +3,11 @@ import { Entry } from '../shared/entry.model'
 import { User } from '../shared/user.model'
 import { UserService } from '../shared/user.service';
 @Component({
-    templateUrl: 'non-admin.component.html',
-    styleUrls: ['non-admin.component.css']
+    templateUrl: 'new-entry.component.html',
+    styleUrls: ['new-entry.component.css']
 })
 
-export class NonAdminComponent implements OnInit {
+export class NewEntryComponent implements OnInit {
     todaysDate: Date
     entry: Entry
     _didYesterday: string

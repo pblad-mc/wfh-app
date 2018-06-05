@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpModule} from '@angular/http';
 import { LoginComponent } from './login/login.component';
-import { NonAdminComponent } from './non-admin/non-admin.component';
-import { AdminComponent } from './admin/admin.component';
+import { NewEntryComponent } from './new-entry/new-entry.component';
+import { LookupComponent } from './lookup/lookup.component';
 import { FooterComponent } from './footer-component/footer-compoent';
 import { AutocompleteFilterEmployees } from './auto-complete/autocomplete.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -64,8 +64,8 @@ import { RouterModule, Router } from '@angular/router';
   declarations: [ 
     AppComponent,
     LoginComponent,
-    NonAdminComponent,
-    AdminComponent,
+    NewEntryComponent,
+    LookupComponent,
     FooterComponent,
     AutocompleteFilterEmployees,
     DatepickerComponent,
@@ -85,8 +85,8 @@ import { RouterModule, Router } from '@angular/router';
     MatNativeDateModule,
     MatRippleModule,
     RouterModule.forRoot ([
-      { path: 'toNonAdmin', component: NonAdminComponent },
-      { path: 'toAdmin', component: AdminComponent },
+      { path: 'toNonAdmin', component: NewEntryComponent },
+      { path: 'toAdmin', component: LookupComponent },
       { path: 'toLogin', component: LoginComponent },
       { path: '', redirectTo: 'toLogin', pathMatch: 'full'},
       { path: '**', redirectTo: 'toLogin', pathMatch: 'full'}

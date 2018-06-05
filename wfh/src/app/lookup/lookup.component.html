@@ -22,7 +22,6 @@
         </h1>
         <hr class="specialHr">
 
-        <!--<img width="300" alt="image" src="../photos/m.jpg">-->
     </div>
 
     <div class="overallWrapper">
@@ -68,16 +67,8 @@
 
 
     <div *ngIf="showQueryResults">
-        <query-result-table  *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></query-result-table>
+        <query-result-table *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></query-result-table>
     </div>
-
-
-    <!--
-        <div class="queryResults" *ngIf="showQueryResults">
-            <query-result [user]="selectedUser" [date]="date.toDateString()" [entry]="entry"></query-result>
-        </div>
-    -->
-
 
     <footer-component></footer-component>
 

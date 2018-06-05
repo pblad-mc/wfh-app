@@ -6,11 +6,11 @@ import { AutocompleteFilterEmployees } from '../auto-complete/autocomplete.compo
 
 
 @Component({
-    templateUrl: 'admin.component.html',
-    styleUrls: ['admin.component.css']
+    templateUrl: 'lookup.component.html',
+    styleUrls: ['lookup.component.css']
 })
 
-export class AdminComponent implements OnInit {
+export class LookupComponent implements OnInit {
     users: User[]
     usersNames: string[]
     selectedUser: User
