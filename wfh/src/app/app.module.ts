@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
 import { DatepickerComponent  } from './datepicker/datepicker.component';
@@ -48,16 +47,15 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    InMemoryWebApiModule.forRoot(InMemoryEntryService),
     MatDatepickerModule,
     MatNativeDateModule,
     MatRippleModule,
     RouterModule.forRoot ([
-      { path: 'toNonAdmin', component: NewEntryComponent },
-      { path: 'toAdmin', component: LookupComponent },
-      { path: 'toLogin', component: LoginComponent },
-      { path: '', redirectTo: 'toLogin', pathMatch: 'full'},
-      { path: '**', redirectTo: 'toLogin', pathMatch: 'full'}
+      { path: 'new-entry', component: NewEntryComponent },
+      { path: 'entry-lookup', component: LookupComponent },
+      { path: 'login', component: LoginComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full'},
+      { path: '**', redirectTo: 'login', pathMatch: 'full'}
     ])
   ],
   providers: [ UserService ],

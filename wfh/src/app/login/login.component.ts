@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     }
 
     employee_login_was_clicked() {
-        this.routingUrl = '/toNonAdmin';
+        this.routingUrl = '/new-entry';
         this.login();
     }
 
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
     }
 
     adam_login_was_clicked() {
-        this.routingUrl = '/toAdmin';
+        this.routingUrl = '/entry-lookup';
         this.login();
     }
 }

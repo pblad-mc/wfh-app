@@ -103,7 +103,7 @@ export class NewEntryComponent implements OnInit {
                     'title': '${this.userService.getCurrentUser().name} is working from home today [Morning]',
                     'color': '#ea3c3c',
                     'author_name': 'Work From Home',
-                    'author_link': 'http://localhost:4200/toLogin',
+                    'author_link': 'http://localhost:4200/login',
                     'fields': [{
                         'value': '_Did Yesterday:_ \n
                           ${this._didYesterday}\n
@@ -134,7 +134,7 @@ export class NewEntryComponent implements OnInit {
                     'title': '${this.userService.getCurrentUser().name} just finished working [Evening]',
                     'color': '#ea3c3c',
                     'author_name': 'Work From Home',
-                    'author_link': 'http://localhost:4200/toLogin',
+                    'author_link': 'http://localhost:4200/login',
                     'fields': [{
                         'value': '_Doing Today:_ \n${this._doingToday}\n_Notes:_ \n${this._eveningNotes}',
                         'short': true
