@@ -61,7 +61,6 @@ export class LoginComponent implements OnInit {
     }
 
 
-
     check_if_validation_is_true(username: string, password: string) {
         for (let u of this.users) {
             if (u.username == username) {
