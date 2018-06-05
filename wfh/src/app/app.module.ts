@@ -8,8 +8,7 @@ import { NonAdminComponent } from './non-admin/non-admin.component';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer-component/footer-compoent';
 import { AutocompleteFilterEmployees } from './auto-complete/autocomplete.component';
-import { AutocompleteFilterDates } from './autocomplete-dates/autocomplete-dates.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
@@ -17,7 +16,6 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InMemoryEntryService } from './backend';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
-import { QueryResultComponent } from './query-result/query-result.component';
 import { DatepickerComponent  } from './datepicker/datepicker.component';
 import { QueryResultTableComponent } from './query-result-table/query-result-table.component';
 
@@ -59,24 +57,19 @@ import {
 } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk/table';
-
-
 import { RouterModule, Router } from '@angular/router';
 
 
 @NgModule({
-  declarations: [ //"Now you can use the login tag that is referenced in the html"
+  declarations: [ 
     AppComponent,
     LoginComponent,
     NonAdminComponent,
     AdminComponent,
     FooterComponent,
     AutocompleteFilterEmployees,
-    AutocompleteFilterDates,
-    QueryResultComponent,
     DatepickerComponent,
     QueryResultTableComponent,
-
   ],
   imports: [
     BrowserModule,

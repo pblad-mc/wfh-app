@@ -2,7 +2,6 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 
-/** @title Basic datepicker */
 @Component({
     selector: 'datepicker',
     templateUrl: 'datepicker.component.html',

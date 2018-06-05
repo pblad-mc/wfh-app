@@ -4,5 +4,5 @@ export class User {
    name:string;
    username:string;
    password:string;
-   entries : Entry[]; //mapes dates to entries
+   entries : Entry[]; 
 }

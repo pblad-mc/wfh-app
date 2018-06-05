@@ -22,14 +22,9 @@ export class LoginComponent implements OnInit {
 
     users: User[];
 
-    constructor(
-        private userService: UserService,
-        private router: Router )
-    {   //why is this empty? Where are there parameters if it does nothing with them? 
-    }
+    constructor(private userService: UserService, private router: Router) {}
 
-    ngOnInit() 
-    {
+    ngOnInit() {
         this.userService.getUsers().then(users => this.users = users);
     }
 
@@ -47,17 +42,17 @@ export class LoginComponent implements OnInit {
         this._password = value;
     }
 
-    employeeLogin(){
+    employee_login_was_clicked() {
         this.routingUrl = '/toNonAdmin'
         this.login()
     }
 
-    login(){
+    login() {
         this.userFound = this.users.find(u => u.username == this.username)
-        
-        if (this.userFound && this.userFound.password == this.password){
+
+        if (this.userFound && this.userFound.password == this.password) {
             this.loginFailed = false
-            this.userService.setCurrentUser(this.userFound)            
+            this.userService.setCurrentUser(this.userFound)
             this.router.navigate([this.routingUrl]);
         }
         else {
@@ -65,21 +60,18 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    
 
-    check_if_validation_is_true( username:string , password:string )
-    {
-            for(let u of this.users)
-            {
-                if (u.username == username)
-                {
-                    return true;
-                }
+
+    check_if_validation_is_true(username: string, password: string) {
+        for (let u of this.users) {
+            if (u.username == username) {
+                return true;
             }
-            return false;
+        }
+        return false;
     }
 
-    adminLogin(){
+    adam_login_was_clicked() {
         this.routingUrl = '/toAdmin'
         this.login()
     }

@@ -4,17 +4,12 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { UserService } from '../shared/user.service';
 
-/**
- * @title Filter autocomplete
- */
+
 @Component({
   selector: 'autocomplete-filter',
   templateUrl: 'autocomplete.component.html',
   styleUrls: ['autocomplete.component.css']
 })
-
-
-
 export class AutocompleteFilterEmployees implements OnInit {
 
   myControl: FormControl = new FormControl();
@@ -42,16 +37,11 @@ export class AutocompleteFilterEmployees implements OnInit {
   filter(val: string): string[] {
     let filteredString =  this.employees.filter(employee => employee.toLowerCase().includes(val.toLowerCase()));
     this.value = filteredString[0];
-    //console.log (this.value);
     this.sendValue()
     return filteredString
   }
 
-  setValue()
-  {
-    console.log('Printing out selected value');
-    console.log(this.value);
-  }
+
 
   getValue():string {
     return this.value;

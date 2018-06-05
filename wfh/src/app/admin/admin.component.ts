@@ -12,50 +12,37 @@ import { AutocompleteFilterEmployees } from '../auto-complete/autocomplete.compo
 
 export class AdminComponent implements OnInit {
     users: User[]
-    usersNames: string[] 
+    usersNames: string[]
     selectedUser: User
     selectedUserName: string
-    date:Date;
+    date: Date;
     dateString: string
     entry: Entry
 
-    constructor(private userService: UserService){   }
+    constructor(private userService: UserService) { }
 
-    ngOnInit() 
-    {
-        console.log(this.userService.getUsers().then(users => {this.users = users}));
-        
-
-        // for (let user of this.users){
-        //     this.usersNames.push(user.name)
-        // }
-        // console.log(this.usersNames);
-    
+    ngOnInit() {
+        this.userService.getUsers().then(users => { this.users = users })
     }
 
-    submit(){
-        //console.log("Hunter is good at ping pong")
-    }
 
-    receiveEmployee($event){
+    receiveEmployee($event) {
         this.selectedUserName = $event
-        //console.log("this is what we got ", this.selectedUserName);
-        if (this.users){
+        if (this.users) {
             this.selectedUser = this.users.find(u => u.name == this.selectedUserName)
         }
         this.getEntry()
     }
 
-    receiveDate($event)
-    {
+    receiveDate($event) {
         this.date = $event;
         this.getEntry()
     }
 
-    getEntry(){
-        if(this.selectedUser && this.date){
+    getEntry() {
+        if (this.selectedUser && this.date) {
             this.entry = this.selectedUser.entries.find(entry => entry.date == this.date.toDateString())
-            if ( !this.entry ){
+            if (!this.entry) {
                 this.entry = {
                     date: this.date.toDateString(),
                     morning_startTime: "--",

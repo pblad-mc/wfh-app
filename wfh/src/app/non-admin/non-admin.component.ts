@@ -32,10 +32,8 @@ export class NonAdminComponent implements OnInit {
         this.retrieveEntry()
     }
 
-    //constructor (private username: string) { }
 
     morningSubmit() {
-        // put data into database
         console.log("submit morning data");
         console.log("today's date: ", this.todaysDate.toDateString());
 
@@ -200,6 +198,4 @@ export class NonAdminComponent implements OnInit {
 
         }
     }
-
-    
 }
