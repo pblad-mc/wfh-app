@@ -6,7 +6,7 @@ import { Entry } from '../shared/entry.model';
 
 
 @Component({
-    selector: 'login-component',
+    selector: 'app-login-component',
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.css']
 })
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     _password: string;
     currentUser: User;
     routingUrl: string;
-    loginFailed: boolean = false;
+    loginFailed = false;
 
     userFound: User;
 
@@ -43,27 +43,26 @@ export class LoginComponent implements OnInit {
     }
 
     employee_login_was_clicked() {
-        this.routingUrl = '/toNonAdmin'
-        this.login()
+        this.routingUrl = '/new-entry';
+        this.login();
     }
 
     login() {
-        this.userFound = this.users.find(u => u.username == this.username)
+        this.userFound = this.users.find(u => u.username === this.username);
 
-        if (this.userFound && this.userFound.password == this.password) {
-            this.loginFailed = false
-            this.userService.setCurrentUser(this.userFound)
+        if (this.userFound && this.userFound.password === this.password) {
+            this.loginFailed = false;
+            this.userService.setCurrentUser(this.userFound);
             this.router.navigate([this.routingUrl]);
-        }
-        else {
-            this.loginFailed = true
+        } else {
+            this.loginFailed = true;
         }
     }
 
 
     check_if_validation_is_true(username: string, password: string) {
-        for (let u of this.users) {
-            if (u.username == username) {
+        for (const u of this.users) {
+            if (u.username === username) {
                 return true;
             }
         }
@@ -71,7 +70,7 @@ export class LoginComponent implements OnInit {
     }
 
     adam_login_was_clicked() {
-        this.routingUrl = '/toAdmin'
-        this.login()
+        this.routingUrl = '/entry-lookup';
+        this.login();
     }
 }

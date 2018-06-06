@@ -18,32 +18,32 @@
             Login
         </h3>
         <div class="login">
-    
-    
+
+
             <div class="inputTextWrapper">
                 <h3>Username</h3>
                 <input class="inputText" type="text" name="name" [(ngModel)]='username' />
-    
+
             </div>
-    
+
             <div class="inputTextWrapper">
                 <h3>Password</h3>
                 <input class="inputText" type="password" name="name" [(ngModel)]='password' />
             </div>
-    
+
             <div style="padding-top: 30px;">
-    
-    
+
+
                 <button class="loginButton" style="background-color:#999999" (click)="employee_login_was_clicked()"> NEW ENTRY </button>
-    
+
                 <div class="divider"></div>
-    
+
                 <button (click)="adam_login_was_clicked()" class="loginButton"> LOOKUP </button>
             </div>
-    
-    
+
+
         </div>
     </div>
 
-    <footer-component></footer-component>
+    <app-footer-component></app-footer-component>
 </body>

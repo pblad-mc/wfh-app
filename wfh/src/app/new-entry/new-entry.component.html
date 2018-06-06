@@ -4,13 +4,13 @@
 <body>
 
     <div class="lookupButtonWrapper">
-        <a [routerLink]="['/toAdmin']" class="lookupButton">
+        <a [routerLink]="['/entry-lookup']" class="lookupButton">
            Lookup
         </a>
     </div>
 
     <div class="logoutButtonWrapper">
-        <a [routerLink]="['/toLogin']" class="logoutButton">
+        <a [routerLink]="['/login']" class="logoutButton">
             Logout
         </a>
     </div>
@@ -62,20 +62,20 @@
 
                 <div class="inputTextWrapper">
                     <h3>Accomplished Today</h3>
-                    <textarea 
-                        name="didYesterday" 
-                        rows="4" 
-                        cols="50" 
+                    <textarea
+                        name="didYesterday"
+                        rows="4"
+                        cols="50"
                         required
                         [(ngModel)]="didToday"></textarea>
                 </div>
 
                 <div class="inputTextWrapper">
                     <h3>Notes</h3>
-                    <textarea 
+                    <textarea
                     name="notes"
                     rows="4"
-                    cols="50" 
+                    cols="50"
                     [(ngModel)]="eveningNotes"></textarea>
                 </div>
 
@@ -86,6 +86,6 @@
         </div>
     </div>
 
-    <footer-component></footer-component>
+    <app-footer-component></app-footer-component>
 
 </body>

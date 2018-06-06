@@ -4,13 +4,13 @@
 <body>
 
     <div class="newEntryButtonWrapper">
-        <a [routerLink]="['/toNonAdmin']" class="newEntryButton">
+        <a [routerLink]="['/new-entry']" class="newEntryButton">
             New Entry
         </a>
     </div>
 
     <div class="logoutButtonWrapper">
-        <a [routerLink]="['/toLogin']" class="logoutButton">
+        <a [routerLink]="['/login']" class="logoutButton">
             Logout
         </a>
     </div>
@@ -33,13 +33,13 @@
 
                 <div class="inputTextWrapper">
 
-                    <autocomplete-filter (selected)="receiveEmployee($event)">
-                    </autocomplete-filter>
+                    <app-autocomplete-filter (selected)="receiveEmployee($event)">
+                    </app-autocomplete-filter>
 
                 </div>
 
                 <div class="inputTextWrapper">
-                    <datepicker (dateSelected)="receiveDate($event)" style="float: left;"></datepicker>
+                    <app-datepicker (dateSelected)="receiveDate($event)" style="float: left;"></app-datepicker>
                 </div>
 
                 <div style="height: 60px;"></div>
@@ -69,9 +69,9 @@
 
 
     <div *ngIf="showQueryResults">
-        <query-result-table *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></query-result-table>
+        <app-query-result-table *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></app-query-result-table>
     </div>
 
-    <footer-component></footer-component>
+    <app-footer-component></app-footer-component>
 
 </body>
